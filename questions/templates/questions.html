@@ -3,21 +3,23 @@
         {% block content %}
         <div class="container">
             <div class="chategory">
-                <button class="btn btn-primary btn-lg" href="#" role="no_filter" >All</button>
-                <button class="btn btn-info btn-lg" href="#" role="filter_istqb">ISTQB</button>
-                <button class="btn btn-info btn-lg" href="#" role="filter_can">CAN</button>
-                <button class="btn btn-info btn-lg" href="#" role="filter_oop">OOP</button>
-                <button class="btn btn-info btn-lg" href="#" role="filter_personal">Personal</button>
+                <button class="btn btn-primary btn-lg" id="btn_all" >All</button>
+                <button class="btn btn-info btn-lg" id="btn_istqb">ISTQB</button>
+                <button class="btn btn-info btn-lg" id="btn_can">CAN</button>
+                <button class="btn btn-info btn-lg" id="btn_oop">OOP</button>
+                <button class="btn btn-info btn-lg" id="btn_logic">Logic</button>
+                <button class="btn btn-info btn-lg" id="btn_personal" role="filter_personal">Personal</button>
             </div>
 
-            <div>
+            <div class> 
                 {% for question in questions %}
-                    <div class="question">
+                    <div class="{{ question.subject }}" >
                         <input id="{{ question.id }}" type="checkbox" unchecked>
                         <label for="{{ question.id }}"> {{ question.question }}
-                            {% if question.answer != 'N.A.' %}
+                            <!-- {% if question.answer != 'N.A.' %}
                             <div class="tag_answer">+ Answer</div>
-                            {% endif %}
+                            {% endif %} -->
+                            <div class="tag_subject">{{ question.subject }}</div>
                             <div class="tag_level">{{ question.dificulty_level }}</div>
                         </label> 
                     </div>
