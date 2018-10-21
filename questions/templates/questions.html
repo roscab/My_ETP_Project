@@ -1,0 +1,31 @@
+    {% extends 'page_base.html' %}
+
+        {% block content %}
+        <div class="container">
+            <div class="chategory">
+                <button class="btn btn-primary btn-lg" href="#" role="no_filter" >All</button>
+                <button class="btn btn-info btn-lg" href="#" role="filter_istqb">ISTQB</button>
+                <button class="btn btn-info btn-lg" href="#" role="filter_can">CAN</button>
+                <button class="btn btn-info btn-lg" href="#" role="filter_oop">OOP</button>
+                <button class="btn btn-info btn-lg" href="#" role="filter_personal">Personal</button>
+            </div>
+
+            <div>
+                {% for question in questions %}
+                    <div class="question">
+                        <input id="{{ question.id }}" type="checkbox" unchecked>
+                        <label for="{{ question.id }}"> {{ question.question }}
+                            {% if question.answer != 'N.A.' %}
+                            <div class="tag_answer">+ Answer</div>
+                            {% endif %}
+                            <div class="tag_level">{{ question.dificulty_level }}</div>
+                        </label> 
+                    </div>
+                {% endfor %}    
+            </div>
+                    
+            <div class="btn_report">
+                    <button class="btn btn-primary btn-lg" href="#" role="no_filter" style="float: right" id='btn_report'>Generate report</button>
+            </div>
+        </div>    
+        {% endblock %}
