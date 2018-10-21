@@ -21,7 +21,7 @@
     color: #fff;
     background-color: #8da1f7;
     white-space: wrap;
-  }  s
+  }  
 
   .tag_answer {
     display: block;
@@ -34,6 +34,7 @@
     background-color: #c0f78d;
     white-space: wrap;
     cursor: pointer;
+    margin-left: 15px;
   } 
 
   .tag_subject {

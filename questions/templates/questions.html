@@ -16,9 +16,9 @@
                     <div class="{{ question.subject }}" >
                         <input id="{{ question.id }}" type="checkbox" unchecked>
                         <label for="{{ question.id }}"> {{ question.question }}
-                            <!-- {% if question.answer != 'N.A.' %}
+                            {% if question.answer != 'N.A.' %}
                             <div class="tag_answer">+ Answer</div>
-                            {% endif %} -->
+                            {% endif %} 
                             <div class="tag_subject">{{ question.subject }}</div>
                             <div class="tag_level">{{ question.dificulty_level }}</div>
                         </label> 
