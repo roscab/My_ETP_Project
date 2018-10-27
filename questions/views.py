@@ -11,3 +11,7 @@ def home(request):
 def questions(request):
     questions = Question.objects.all()
     return render(request, 'questions.html', {'questions': questions})
+
+def table(request):
+    questions = Question.objects.all()
+    return render(request, 'table.html', {'questions': questions})

@@ -14,11 +14,11 @@
 
             <div class> 
                 {% for question in questions %}
-                    <div class="question" tag="{{ question.subject }}"  type="checkbox" unchecked>
-                        <input id="{{ question.id }}" type="checkbox" unchecked>
+                    <div class="question" tag="{{ question.subject }}">
+                        <input id="{{ question.id }}" type="checkbox" option="checked">
                         <label for="{{ question.id }}"> {{ question.question }}
                             {% if question.answer != 'N.A.' %}
-                            <!-- <div class="tag_answer">+ Answer</div> -->
+                            <div class="tag_answer">+ Answer</div>
                             {% endif %} 
                             <div class="tag_subject">{{ question.subject }}</div>
                             <div class="tag_level">{{ question.dificulty_level }}</div>
@@ -28,7 +28,45 @@
             </div>
                     
             <div class="btn_report">
-                    <button class="btn btn-primary btn-lg" href="#" role="no_filter" style="float: right" id='btn_report'>Generate report</button>
+                    <h2><button class="btn btn-primary btn-lg" id="btn_report" style="float: right">Generate report</button></h2>
+            </div>
+
+            <div>
+                <table style="display:none">
+                    <tr>
+                    <th>Question</th>
+                    <th>Level</th>
+                    <th style="width:30%">Remarks</th>
+                    <th>Grade</th>
+                    </tr>
+                    {% for question in questions %}  
+                        <tr class="entry" id="{{ question.id }}" style="display:none">
+                            <td><b>{{ question.question }}</b></td>
+                            <td>{{ question.dificulty_level }}</td>
+                            <td></td>
+                            <td></td>  
+                        </tr>
+                        <tr class="entry" id="{{ question.id }}" style="display:none">
+                            {% if question.answer != 'N.A.' %}
+                                <td style="height: 100px; overflow: hidden;"><b>Answer:</b> {{ question.answer }} </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            {% else %}
+                                <td style="height: 150px; overflow: hidden;"></td>  
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            {% endif %} 
+                        </tr>
+                    </div>    
+                    {% endfor %}   
+                </table>
+            </div>
+
+            <div class="btn_print" style="display:none" >
+                    <h2><button class="btn btn-primary btn-lg"  style="float: right"  id="btn_print" >Print report</button></h2>
             </div>
         </div>    
         {% endblock %}
+ 
