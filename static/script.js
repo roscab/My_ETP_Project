@@ -37,10 +37,6 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $("#btn_report").click(function(){
-        
-        $(".btn").each(function( index ) {
-            $(this).hide();
-        }); 
 
         $(".question").each(function( index ) {
             var id = $(this).children().attr("id");
@@ -63,14 +59,19 @@ $(document).ready(function(){
             $(this).show();
         });  
         
+        $(".container").hide(); 
         $("#btn_print").show();
         $(".btn_print").show();
     });
 });
 
 $(document).ready(function(){
-    $("#btn_print").click(function(){            
+    $("#btn_print").click(function(){      
+        $(".candidate").show();     
+        $("#btn_print").hide(); 
         window.print();
+        $("#btn_print").show(); 
+        $(".candidate").hide();
     });
 });
 

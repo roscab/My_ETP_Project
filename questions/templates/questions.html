@@ -30,14 +30,16 @@
             <div class="btn_report">
                     <h2><button class="btn btn-primary btn-lg" id="btn_report" style="float: right">Generate report</button></h2>
             </div>
+        </div>    
 
-            <div>
+        <div class="interview_template">
+                <h1 class="candidate" style="display:none">Candidate name: _____________________</h1>
                 <table style="display:none">
                     <tr>
-                    <th>Question</th>
-                    <th>Level</th>
-                    <th style="width:30%">Remarks</th>
-                    <th>Grade</th>
+                    <th style="background-color: #83c1f3">Question</th>
+                    <th style="background-color: #83c1f3">Level</th>
+                    <th style="background-color: #83c1f3; width:30%">Remarks</th>
+                    <th style="background-color: #83c1f3">Grade</th>
                     </tr>
                     {% for question in questions %}  
                         <tr class="entry" id="{{ question.id }}" style="display:none">
@@ -53,7 +55,7 @@
                                 <td></td>
                                 <td></td>
                             {% else %}
-                                <td style="height: 150px; overflow: hidden;"></td>  
+                                <td style="height: 100px; overflow: hidden;"></td>  
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -62,11 +64,11 @@
                     </div>    
                     {% endfor %}   
                 </table>
-            </div>
-
             <div class="btn_print" style="display:none" >
-                    <h2><button class="btn btn-primary btn-lg"  style="float: right"  id="btn_print" >Print report</button></h2>
+                    <h2><button class="btn btn-primary btn-lg"  style="float: right; margin: 30px"  id="btn_print" >Print</button></h2>
             </div>
-        </div>    
+        </div> 
+
         {% endblock %}
  
+        
