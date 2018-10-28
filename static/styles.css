@@ -1,3 +1,5 @@
+ /* Questions Page */
+ 
  *, *::before, *::after {
     box-sizing: border-box;
   }
@@ -16,6 +18,12 @@
     overflow-y: scroll;
     block-size: 620px;
   } 
+
+  .questions_table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;  
+    margin-top: 25px; 
+}
   
   .tag_level {
     display: block;
@@ -105,13 +113,6 @@ label {
     background-color: #fff;
   }
 
-.questions_table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 97%;
-    margin-top: 50px; 
-}
-
 td, th {
     border: 1px solid #dddddd;
     text-align: left;
@@ -128,12 +129,14 @@ tr:nth-child(even) {
   margin-left: 25px;  
   margin-right: 25px; 
   margin-top: 80px; 
-  margin-top: 60px;   
+  margin-bottom: 60px;   
 }
 
 @page { 
   margin: 0mm; 
 }
+ 
+/* Candidates page */
 
 .candidates {
   display: block;
@@ -142,6 +145,6 @@ tr:nth-child(even) {
   block-size: 620px;
 } 
 
-.chategory {
+.questions_chategory{
   margin-top: 10px;
 }

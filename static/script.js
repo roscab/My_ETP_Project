@@ -69,8 +69,10 @@ $(document).ready(function(){
     $("#btn_print").click(function(){      
         $(".candidate").show();     
         $("#btn_print").hide(); 
+        $("#btn_home").hide();
         window.print();
-        $("#btn_print").show(); 
+        $("#btn_print").show();
+        $("#btn_home").show(); 
         $(".candidate").hide();
     });
 });
