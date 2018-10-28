@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^$', views.home, name='home'), # home page
     url(r'^admin/', admin.site.urls), # admin page
     url(r'^questions/', views.questions, name='questions'), # questions page
+    url(r'^candidates/', views.candidates, name='candidates'), # candidate page
 ]

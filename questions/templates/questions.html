@@ -2,17 +2,7 @@
 
         {% block content %}
         <div class="container">
-            <div class="chategory">
-                <button class="btn btn-primary btn-lg" id="btn_all" tag="all" >All</button>
-                <button class="btn btn-info btn-lg" id="btn_istqb" tag="ISTQB">ISTQB</button>
-                <button class="btn btn-info btn-lg" id="btn_can" tag="CAN">CAN</button>
-                <button class="btn btn-info btn-lg" id="btn_oop" tag="OOP">OOP</button>
-                <button class="btn btn-info btn-lg" id="btn_logic" tag="Logic">Logic</button>
-                <button class="btn btn-info btn-lg" id="btn_personal" tag="Personal" role="filter_personal">Personal</button>
-                <button class="btn btn-danger btn-lg" id="btn_selected" tag="selected">Selected</button>
-            </div>
-
-            <div class> 
+            <div class="questions"> 
                 {% for question in questions %}
                     <div class="question" tag="{{ question.subject }}">
                         <input id="{{ question.id }}" type="checkbox" option="checked">
@@ -27,14 +17,23 @@
                 {% endfor %}    
             </div>
                     
-            <div class="btn_report">
-                    <h2><button class="btn btn-primary btn-lg" id="btn_report" style="float: right">Generate report</button></h2>
+            <div class="chategory">
+                    <button class="btn btn-primary btn" id="btn_all" tag="all" >All</button>
+                    <button class="btn btn-info btn" id="btn_istqb" tag="ISTQB">ISTQB</button>
+                    <button class="btn btn-info btn" id="btn_can" tag="CAN">CAN</button>
+                    <button class="btn btn-info btn" id="btn_oop" tag="OOP">OOP</button>
+                    <button class="btn btn-info btn" id="btn_logic" tag="Logic">Logic</button>
+                    <button class="btn btn-info btn" id="btn_personal" tag="Personal" role="filter_personal">Personal</button>
+                    <button class="btn btn-danger btn" id="btn_selected" tag="selected">Selected</button>
+                    <button class="btn btn-primary btn-lg" id="btn_report" style="float: right">Generate report</button>
             </div>
+
+            
         </div>    
 
         <div class="interview_template">
                 <h1 class="candidate" style="display:none">Candidate name: _____________________</h1>
-                <table style="display:none">
+                <table class="questions_table" style="display:none">
                     <tr>
                     <th style="background-color: #83c1f3">Question</th>
                     <th style="background-color: #83c1f3">Level</th>

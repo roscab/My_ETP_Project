@@ -9,6 +9,13 @@
   .question {
     position: relative;
   } 
+
+  .questions {
+    display: block;
+    overflow: hidden;
+    overflow-y: scroll;
+    block-size: 620px;
+  } 
   
   .tag_level {
     display: block;
@@ -97,9 +104,8 @@ label {
   input:checked + label::before {
     background-color: #fff;
   }
-  
 
-table {
+.questions_table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 97%;
@@ -123,4 +129,19 @@ tr:nth-child(even) {
   margin-right: 25px; 
   margin-top: 80px; 
   margin-top: 60px;   
+}
+
+@page { 
+  margin: 0mm; 
+}
+
+.candidates {
+  display: block;
+  overflow: hidden;
+  overflow-y: scroll;
+  block-size: 620px;
+} 
+
+.chategory {
+  margin-top: 10px;
 }

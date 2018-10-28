@@ -20,6 +20,14 @@
         <div class="container">
             <img class="city_header"  src="{% static 'images/header.png' %}">
         </div>    
+
+        <div class="container">
+                <a href="/questions" style="display: inline-block;"><h2><button class="btn btn-primary btn-lg" role="filter" >Interview questions</button></h2> </a>
+                <a href="/candidates" style="display: inline-block;"><h2><button class="btn btn-info btn-lg" role="filter" >Candidate status</button></h2> </a>
+                <button class="btn btn-danger btn-lg" href="#" role="no_filter"  style="opacity: 0.5" >Data analysis</button>
+                <button class="btn btn-warning btn-lg" href="#" role="no_filter" style="opacity: 0.5">Interview Report</button>
+                <button class="btn btn-primary btn-lg" href="#" role="no_filter" style="opacity: 0.5">Calendar</button>
+        </div>
             {% block content %}
             {% endblock %}    
     </body>   
