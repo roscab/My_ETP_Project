@@ -20,21 +20,21 @@ class Question(models.Model):
 
 class Candidate(models.Model):
     RECRUITER_OPTIONS = [('Guillermo','Guillermo Lopez'),('Vernonica','Verónica Mendes'),('Alberto','Alberto Arjona'),('Luisa','Luisa Cabrera'),('Oscar','Oscar Penon'),('Monika','Monika Szymanska')]
-    LEVEL_OPTIONS = [('Junior','Junior'),('Profesional','Profesional'),('Senior','Senior')]
-    CLIENT_OPTIONS = [('ADP','ADP'),('FICOSA','FICOSA'),('HP','HP'),('Kaba','Kaba'),('Omrom','Omrom'),('Roche','Roche'),('Vueling','Vueling')]
+    LEVEL_OPTIONS = [('Junior','Junior'),('Junior-Low','Junior-Low'),('Junior-High','Junior-High'),('Profesional','Profesional'),('Profesional-Low','Profesional-Low'),('Profesional-High','Profesional-High'),('Senior','Senior'),('Senior-Low','Senior-Low'),('Senior-High','Senior-High')]
     STATUS_OPTIONS = [('In process','In process'),('Stand By for other opportunities','Stand By for other opportunities'),('Pass all process','Pass all process'),('Rejeced after techncal interview','Rejeced after techncal interview'),('Rejeced by BUL','Rejeced by BUL'),('Rejeced by client','Rejeced by client'),('Descarded REC','Descarded REC'),('Reject pre-offer','Reject pre-offer'),('Reject Offer','Reject Offer')]
     GROUP_OPTIONS = [('C/C++','C/C++'),('Backend','Backend'),('Frontend','Frontend'),('Phyton','Phyton'),('QA','QA'),('.NET','.NET')]
 
     name = models.CharField(max_length=200)
     recruiter = models.CharField(choices=RECRUITER_OPTIONS, max_length=200)
-    contac_date = models.DateField()
+    contact_date = models.DateField()
     technical_interview_date = models.DateField()
-    level = models.CharField(choices=LEVEL_OPTIONS, max_length=200)
+    technical_interviewer = models.CharField(max_length=200)
+    technical_level = models.CharField(choices=LEVEL_OPTIONS,default='none', max_length=200)
     bul_interview_date = models.DateField()
-    client = models.CharField(choices=CLIENT_OPTIONS, max_length=200)
+    bul_intervier = models.CharField(max_length=200)
     group = models.CharField(choices=GROUP_OPTIONS, max_length=200)
     status = models.CharField(choices=STATUS_OPTIONS, max_length=200)
-    next_step = models.CharField(max_length=200)
+    # next_step = models.CharField(max_length=200)
     # created_at = models.DateTimeField(default=datetime.now, blank=True)
     
     def __str__(self):

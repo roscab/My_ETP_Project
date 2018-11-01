@@ -1,7 +1,16 @@
     {% extends 'page_base.html' %}
 
-        {% block content %}
-        <div class="container">
+        {% block content %}      
+        <div class="main_content">          
+            <div class="questions_chategory">
+                    <button class="btn btn-primary btn" id="btn_all" tag="all" >All</button>
+                    <button class="btn btn-info btn" id="btn_istqb" tag="ISTQB">ISTQB</button>
+                    <button class="btn btn-info btn" id="btn_can" tag="CAN">CAN</button>
+                    <button class="btn btn-info btn" id="btn_oop" tag="OOP">OOP</button>
+                    <button class="btn btn-info btn" id="btn_logic" tag="Logic">Logic</button>
+                    <button class="btn btn-info btn" id="btn_personal" tag="Personal" role="filter_personal">Personal</button>
+                    <button class="btn btn-danger btn" id="btn_selected" tag="selected">Selected</button>
+            </div>
             <div class="questions"> 
                 {% for question in questions %}
                     <div class="question" tag="{{ question.subject }}">
@@ -15,20 +24,12 @@
                         </label> 
                     </div>
                 {% endfor %}    
-            </div>
-                    
-            <div class="questions_chategory">
-                    <button class="btn btn-primary btn" id="btn_all" tag="all" >All</button>
-                    <button class="btn btn-info btn" id="btn_istqb" tag="ISTQB">ISTQB</button>
-                    <button class="btn btn-info btn" id="btn_can" tag="CAN">CAN</button>
-                    <button class="btn btn-info btn" id="btn_oop" tag="OOP">OOP</button>
-                    <button class="btn btn-info btn" id="btn_logic" tag="Logic">Logic</button>
-                    <button class="btn btn-info btn" id="btn_personal" tag="Personal" role="filter_personal">Personal</button>
-                    <button class="btn btn-danger btn" id="btn_selected" tag="selected">Selected</button>
-                    <button class="btn btn-primary btn-lg" id="btn_report" style="float: right">Generate report</button>
             </div>  
-        </div>    
-
+            <div>
+                <button class="btn btn-primary btn-lg" id="btn_report" style="float: right">Generate report</button>
+            </div>   
+        </div>
+            
         <div class="interview_template">
                 <h1 class="candidate" style="display:none">Candidate name: _____________________</h1>
                 <table class="questions_table" style="display:none">
@@ -60,6 +61,7 @@
                         </tr>
                     {% endfor %}   
                 </table>
+
             <div class="btn_print" style="display:none" >
                     <button class="btn btn-primary btn-lg"  style="float: right; margin: 30px"  id="btn_print" >Print</button>
                     <a href="/" id="btn_home" ><button class="btn btn-danger btn-lg"  style="float: left; margin: 30px">Go back</button></a>

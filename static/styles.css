@@ -1,3 +1,59 @@
+ /* Header */
+.header{
+  display: block; 
+  margin-left: 32%;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* Main content */
+
+.main_content{
+  display: block;
+  padding-left: 20%;
+  width: 95%;
+}
+ 
+ /* Side bar */
+ 
+ .sidebar {
+  display: block;
+  align-items: stretch;
+  float: left;
+  min-width: 15%;
+  max-width: 15%;
+  min-height: 100vh;
+  background: #7386D5;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.credits{
+  position: absolute;
+  margin: 15px;
+  bottom: 50px;
+}
+
+.about_contact{
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+a, a:hover, a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+  background: #DDEAEE;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid #47748b;
+}
+
  /* Questions Page */
  
  *, *::before, *::after {
@@ -5,7 +61,9 @@
   }
   
   img.city_header{
+    display: block;
     width: 100%;
+    opacity: 40%;
   }
 
   .question {
@@ -16,6 +74,7 @@
     display: block;
     overflow: hidden;
     overflow-y: scroll;
+    margin-top: 10px;
     block-size: 620px;
   } 
 
@@ -142,9 +201,74 @@ tr:nth-child(even) {
   display: block;
   overflow: hidden;
   overflow-y: scroll;
-  block-size: 620px;
+  margin: auto;
+  block-size: 660px;
+  margin-top: 20px;
 } 
 
 .questions_chategory{
   margin-top: 10px;
+  display: block;
+  padding-left: 30%;
+  width: 95%;
+}
+
+.candidates_chategory{
+  margin-top: 10px;
+  display: block;
+  padding-left: 20%;
+  width: 95%;
+}
+
+/* Buttons */
+
+#btn_report{
+  margin-top: 20px;
+}
+
+#btn_home{
+  margin-left: 5px;
+  margin-bottom: 2px; 
+  width: 200px;
+  opacity: 0.6;
+}
+
+#btn_interview{
+  margin-left: 5px;
+  margin-bottom: 2px; 
+  width: 200px;
+  opacity: 0.6;
+}
+
+#btn_candidates{
+  margin-left: 5px;
+  width: 200px;
+  margin-bottom: 2px; 
+  opacity: 0.6;
+}
+
+#btn_calendar{
+  margin-left: 5px;
+  width: 200px;
+  margin-bottom: 2px; 
+  opacity: 0.6;
+}
+
+#btn_candidate_report{
+  margin-left: 5px;
+  width: 200px;
+  margin-bottom: 2px;
+  opacity: 0.6; 
+}
+
+#btn_data{
+  margin-left: 5px;
+  width: 200px;
+  margin-bottom: 2px;
+  opacity: 0.6; 
+}
+
+.btn:hover{
+  opacity: 1;
+  transition-duration: 10s;
 }

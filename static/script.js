@@ -34,10 +34,8 @@ $(document).ready(function(){
     });
 });
 
-
 $(document).ready(function(){
     $("#btn_report").click(function(){
-
         $(".question").each(function( index ) {
             var id = $(this).children().attr("id");
             $(this).hide();
@@ -58,8 +56,11 @@ $(document).ready(function(){
             if( isSelected[ $(this).attr("id")] == true )
             $(this).show();
         });  
-        
-        $(".container").hide(); 
+        $(".sidebar").hide();   
+        $(".header").hide(); 
+        $(".questions_chategory").hide();
+        $(".questions").hide();
+        $("#btn_report").hide();
         $("#btn_print").show();
         $(".btn_print").show();
     });
@@ -67,7 +68,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $("#btn_print").click(function(){      
-        $(".candidate").show();     
+        $(".candidate").show(); 
         $("#btn_print").hide(); 
         $("#btn_home").hide();
         window.print();
