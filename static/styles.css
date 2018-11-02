@@ -220,6 +220,20 @@ tr:nth-child(even) {
   width: 95%;
 }
 
+select{
+  border: none;
+  background: inherit;
+  font-weight: bold;
+}
+/* 
+<option value="">In process</option>
+<option value="pass">Pass all the process</option>
+<option value="rejeceted_tech">Rejected technical interview</option>
+<option value="rejeceted_bul">Rejected BUL interview</option>
+<option value="rejeceted_preoffer">Rejected pre-offer</option>
+<option value="rejeceted_offer">Rejected offer</option>
+<option value="stand_by">Stand by</option> */
+
 /* Buttons */
 
 #btn_report{

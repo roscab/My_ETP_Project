@@ -4,15 +4,16 @@
 <div class="main_content">
         <div class="candidates_chategory">
                 <button class="btn btn-primary btn" id="btn_canidates_all" tag="all" >All</button>
-                <button class="btn btn-info btn" id="btn_canidates_c++" tag="c++">C/C++</button>
-                <button class="btn btn-info btn" id="btn_canidates_qa" tag="QA">QA</button>
-                <button class="btn btn-info btn" id="btn_canidates_front" tag="Frontend">Frontend</button>
-                <button class="btn btn-info btn" id="btn_canidates_back" tag="Backend">Backend</button>
-                <button class="btn btn-info btn" id="btn_canidates_java" tag="Java">Java</button>
-                <button class="btn btn-info btn" id="btn_canidates_net" tag="Net">.NET</button>
-                <button class="btn btn-info btn" id="btn_canidates_python" tag="Python">Python</button>
-                <button class="btn btn-info btn" id="btn_canidates_ios" tag="iOS">iOS</button>
                 <button class="btn btn-info btn" id="btn_canidates_autosar" tag="Autosar">Autosar</button>
+                <button class="btn btn-info btn" id="btn_canidates_back" tag="Business analyst">Business analyst</button>
+                <button class="btn btn-info btn" id="btn_canidates_c++" tag="C/C++">C/C++</button>
+                <button class="btn btn-info btn" id="DevOps" tag="DevOps">DevOps</button>
+                <button class="btn btn-info btn" id="btn_canidates_front" tag="Frontend">Frontend</button> 
+                <button class="btn btn-info btn" id="btn_canidates_ios" tag="iOS">iOS</button>     
+                <button class="btn btn-info btn" id="btn_canidates_java" tag="Java">Java</button>
+                <button class="btn btn-info btn" id="btn_canidates_net" tag=".NET">.NET</button>
+                <button class="btn btn-info btn" id="btn_canidates_python" tag="Phyton">Phyton</button>
+                <button class="btn btn-info btn" id="btn_canidates_qa" tag="QA">QA</button>
         </div>
         <table class="candidates">    
             <tr>
@@ -20,25 +21,36 @@
                     <th style="background-color: #83c1f3">Group</th>
                     <th style="background-color: #83c1f3">Recruiter</th>
                     <th style="background-color: #83c1f3">Contact date</th>
-                    <th style="background-color: #83c1f3">Tech interview date</th>
+                    <!-- <th style="background-color: #83c1f3">Tech interview date</th> -->
                     <th style="background-color: #83c1f3">Tech interviewer</th>
                     <th style="background-color: #83c1f3">Technical Level</th>
-                    <th style="background-color: #83c1f3">BUL interview date</th>
-                    <th style="background-color: #83c1f3">BUL</th>
+                    <!-- <th style="background-color: #83c1f3">BUL interview date</th> -->
+                    <th style="background-color: #83c1f3">BUL interviewer</th>
                     <th style="background-color: #83c1f3">Status</th>
                     </tr>
                     {% for candidate in candidates %}  
-                        <tr class="candidate_entry" id="{{ candidate.id }}">
+                        <tr class="candidate_entry" id="{{ candidate.id }}" tag="{{ candidate.group }}">
                             <td><b>{{ candidate.name }}</b></td>
                             <td>{{ candidate.group }}</td>
                             <td>{{ candidate.recruiter }}</td>
                             <td>{{ candidate.contact_date }}</td>  
-                            <td>{{ candidate.technical_interview_date }}</td>
+                            <!-- <td>{{ candidate.technical_interview_date }}</td> -->
                             <td>{{ candidate.technical_interviewer }}</td>
                             <td>{{ candidate.technical_level }}</td>  
-                            <td>{{ candidate.bul_interview_date }}</td>
+                            <!-- <td>{{ candidate.bul_interview_date }}</td>  -->
                             <td>{{ candidate.bul_intervier }}</td>
-                            <td>{{ candidate.status }}</td>
+                            <td class="status" style="font-weight: bold">{{ candidate.status }}</td>
+                            <!-- <td><select name="candidate_status">    
+                                <option value="db" selected>{{ candidate.status }}</option>
+                                <option value="progress" id="progress">In process</option>
+                                <option value="pass">Pass all the process</option>
+                                <option value="rejeceted_tech">Rejected technical interview</option>
+                                <option value="rejeceted_bul">Rejected BUL interview</option>
+                                <option value="rejeceted_preoffer">Rejected pre-offer</option>
+                                <option value="rejeceted_offer">Rejected offer</option>
+                                <option value="stand_by">Stand by</option>
+                                </select>
+                            </td> -->
                         </tr>
                     </div>    
                     {% endfor %}   

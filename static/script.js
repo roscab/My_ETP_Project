@@ -66,15 +66,61 @@ $(document).ready(function(){
     });
 });
 
+$( document ).ready(function() {
+    $(".status").each(function( index ) {
+        var status = $(this).text();
+
+        switch ($.trim(status)) { 
+            case 'In process': 
+                $(this).css("color", "#CFD91E");  
+                break;
+            case 'Stand by': 
+                $(this).css("color", "#2CED1A"); 
+                break;
+            case 'Pass all process': 
+                $(this).css("color", "#124E0D");         
+                break;
+            case 'Rejected by BUL': 
+                $(this).css("color", "#720707");  
+                break; 
+            case 'Rejected technical interview': 
+                $(this).css("color", "#E74E08");  
+                break;     
+            case 'Rejected by client': 
+                $(this).css("color", "#EF0808");  
+                break;     
+            case 'Rejected pre-offer': 
+                $(this).css("color", "#2020DE");  
+                break;        
+            case 'Rejected offer': 
+                $(this).css("color", "#A820B4");  
+                break;                 
+            case 'Rejected by recruiter':
+                $(this).css("color", "#E6286A");  
+                break;   
+            default:
+                $(this).css("color", "Black");  
+        }
+     });  
+});
+
+
 $(document).ready(function(){
-    $("#btn_print").click(function(){      
-        $(".candidate").show(); 
-        $("#btn_print").hide(); 
-        $("#btn_home").hide();
-        window.print();
-        $("#btn_print").show();
-        $("#btn_home").show(); 
-        $(".candidate").hide();
+    $(".btn").click(function(){    
+            var candidateType = $(this).attr("tag");
+
+            $(".candidate_entry").each(function( index ) {
+                $(this).hide();
+              });  
+            $(".candidate_entry").each(function( index ) {
+                if(candidateType == 'all')
+                    $(this).show();
+                else    
+                    if($(this).attr("tag") ==  candidateType)
+                        $(this).show();
+              });        
     });
 });
+
+
 
