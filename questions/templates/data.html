@@ -1,0 +1,53 @@
+{% extends 'page_base.html' %}
+
+{% block content%}
+
+<div class="xxx"> 
+    <div class="a_chart">
+        <canvas id="data-chart" width="100%" height="100%"></canvas>         
+    </div>  
+    <div class="chart_info"> 
+            <li>total</li>
+            <li>Autosar</li>
+            <li>Business analyst</li>
+            <li>C/C++</li>
+            <li>DevOps</li>
+            <li>Frotend</li>
+            <li>iOS</li>
+            <li>Java</li>
+            <li>.Net</li>
+            <li>Phyton</li>
+            <li>QA</li>
+    </div>   
+</div>    
+
+<script>
+    new Chart(document.getElementById("data-chart"), {
+        type: 'doughnut',
+        data: {
+        labels: ["Autosar", "Business analyst", "C/C++", "Frotend", "iOS", "Java", ".Net", "Phyton", "QA"],
+        datasets: [
+            {
+            label: "Candidates profile",
+            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+            data: [2478,5267,734,784,433]
+            }
+        ]
+        },
+        options: {
+            legend: {
+                display: false},
+            layout: {
+                
+            },    
+            title: {
+                display: true,
+                text: 'Candidates status overview'    
+            }
+        }
+    });
+</script>
+
+{% endblock %}
+
+

@@ -244,21 +244,21 @@ select{
   margin-left: 5px;
   margin-bottom: 2px; 
   width: 200px;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 #btn_interview{
   margin-left: 5px;
   margin-bottom: 2px; 
   width: 200px;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 #btn_candidates{
   margin-left: 5px;
   width: 200px;
   margin-bottom: 2px; 
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 #btn_calendar{
@@ -279,10 +279,55 @@ select{
   margin-left: 5px;
   width: 200px;
   margin-bottom: 2px;
-  opacity: 0.6; 
+  opacity: 0.8; 
 }
 
 .btn:hover{
   opacity: 1;
   transition-duration: 10s;
 }
+
+/* Data analysis */
+
+.a_chart{
+  display: inline-block;
+  width: 400px; 
+  border: 1px solid red;
+}
+
+.xxx{
+  display: block;
+  border: 1px solid #ddd;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  margin: auto;
+  margin-top: 20px;
+  margin-left: 30%;
+  margin-right: 15%;
+  padding: 10px;
+}
+
+.chart_info{
+  display: block;
+  float: right;
+  max-height: 400px; 
+}
+
+li{
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  padding: 5px 7px;
+  margin-bottom: -1px;
+  border: 1px solid #ddd;
+  line-height: 1;
+  list-style-type: none;
+}
+
+canvas{
+  position: relative;
+  display: block;
+}
+
+
+
+

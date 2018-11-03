@@ -12,14 +12,15 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}">
     <script src="{% static 'jquery-3.1.1.min.js' %}"></script>
     <script src="{% static 'bootstrap.min.js' %}"></script>
+    <script src="{% static 'chart-min.js' %}"></script>
     <script src="{% static 'script.js' %}"></script>
+
     <title>Bootstrap</title>
     </head>
 
     <body>
         <div>
             <div class="sidebar">
-                    <!-- Sidebar -->
                     <nav id="sidebar">
                         <div class="sidebar-header">
                             <img class="logo"  src="{% static 'images/logo.png' %}">
@@ -29,11 +30,11 @@
                         <ul class="list-unstyled components">
                                     <a href="/questions" style="display: inline-block;"><button class="btn btn-warning btn-lg" id="btn_home" >Home</button></a>
                                     <div class="meniu_buttons">
-                                            <a href="/questions" style="display: inline-block;"><button class="btn btn-primary btn-lg" id="btn_interview">Interview questions</button></a>
                                             <a href="/candidates" style="display: inline-block;"><button class="btn btn-info btn-lg" id="btn_candidates">Candidate status</button></a>
-                                            <button class="btn btn-danger btn-lg" href="#" role="no_filter"  style="opacity: 0.5" id="btn_data" >Data analysis</button>
-                                            <button class="btn btn-warning btn-lg" href="#" role="no_filter" style="opacity: 0.5" id="btn_candidate_report">Interview Report</button>
-                                            <button class="btn btn-primary btn-lg" href="#" role="no_filter" style="opacity: 0.5" id="btn_calendar">Calendar</button>
+                                            <a href="/data" style="display: inline-block;"><button class="btn btn-danger btn-lg" id="btn_data" >Data analysis</button></a>
+                                            <a href="/questions" style="display: inline-block;"><button class="btn btn-primary btn-lg" id="btn_interview">Interview questions</button></a>
+                                            <button style="background-color: gray" class="btn btn-warning btn-lg" href="#" role="no_filter" style="opacity: 0.5" id="btn_candidate_report">Interview Report</button>
+                                            <button style="background-color: gray" class="btn btn-primary btn-lg" href="#" role="no_filter" style="opacity: 0.5" id="btn_calendar">Calendar</button>
                                    </div>
                         </ul>
                     </nav>
@@ -50,10 +51,8 @@
                 <div class = "header">
                         <img class="city_header"  src="{% static 'images/header.png' %}">
                 </div>    
-            <div>
                     {% block content %}
                     {% endblock %}  
-            </div>   
 
         </div>  
     </body>   

@@ -16,3 +16,7 @@ def candidates(request):
 def questions(request):
     questions = Question.objects.all()
     return render(request, 'questions.html', {'questions': questions})
+
+def data(request):
+    data = Candidate.objects.all()
+    return render(request, 'data.html', {'candidates': candidates})

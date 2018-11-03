@@ -121,6 +121,3 @@ $(document).ready(function(){
               });        
     });
 });
-
-
-
