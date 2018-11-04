@@ -1,23 +1,52 @@
+
 {% extends 'page_base.html' %}
 
+{% load static %}
 {% block content%}
+    
 
-<div class="xxx"> 
+<div class="chart_header">
+        <img class="logo"  src="{% static 'images/chart_icon.png' %}" style="width: 20px">
+    <span style="color: rgb(75, 75, 75); vertical-align: middle"><b style=>Candidates status</b></span>
+</div>
+<div class="chart_body">
     <div class="a_chart">
         <canvas id="data-chart" width="100%" height="100%"></canvas>         
     </div>  
     <div class="chart_info"> 
-            <li>total</li>
-            <li>Autosar</li>
-            <li>Business analyst</li>
-            <li>C/C++</li>
-            <li>DevOps</li>
-            <li>Frotend</li>
-            <li>iOS</li>
-            <li>Java</li>
-            <li>.Net</li>
-            <li>Phyton</li>
-            <li>QA</li>
+            <li>Total
+                <span class="lable">{{ total }} (100%)</span>
+            </li>
+            <li>Autosar
+                <span class="lable">188 (100%)</span>
+            </li>
+            <li>Business analyst
+                <span class="lable">188 (100%)</span>
+            </li>
+            <li>C/C++
+                <span class="lable">188 (100%)</span>
+            </li>
+            <li>DevOps
+                <span class="lable">188 (100%)</span>
+            </li>
+            <li>Frotend
+                <span class="lable">188 (100%)</span>
+            </li>
+            <li>iOS
+                <span class="lable">188 (100%)</span>
+            </li>    
+            <li>Java
+                <span class="lable">188 (100%)</span>
+            </li>    
+            <li>.Net
+                <span class="lable">188 (100%)</span>
+            </li>    
+            <li>Phyton
+                <span class="lable">188 (100%)</span>
+            </li>    
+            <li>QA
+                <span class="lable">188 (100%)</span>
+            </li>
     </div>   
 </div>    
 
@@ -40,10 +69,6 @@
             layout: {
                 
             },    
-            title: {
-                display: true,
-                text: 'Candidates status overview'    
-            }
         }
     });
 </script>
