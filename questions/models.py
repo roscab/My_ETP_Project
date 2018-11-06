@@ -22,7 +22,7 @@ class Candidate(models.Model):
     RECRUITER_OPTIONS = [('Guillermo','Guillermo Lopez'),('Vernonica','Verónica Mendes'),('Alberto','Alberto Arjona'),('Luisa','Luisa Cabrera'),('Oscar','Oscar Penon'),('Monika','Monika Szymanska')]
     LEVEL_OPTIONS = [('Junior','Junior'),('Junior-Low','Junior-Low'),('Junior-High','Junior-High'),('Profesional','Profesional'),('Profesional-Low','Profesional-Low'),('Profesional-High','Profesional-High'),('Senior','Senior'),('Senior-Low','Senior-Low'),('Senior-High','Senior-High')]
     STATUS_OPTIONS = [('In process','In process'),('Stand by','Stand by'),('Pass all process','Pass all process'),('Rejected technical interview','Rejected technical interview'),('Rejected by BUL','Rejected by BUL'),('Rejected by client','Rejected by client'),('Rejected by recruiter','Rejected by recruiter'),('Rejected pre-offer','Rejected pre-offer'),('Rejected offer','Rejected offer')]
-    GROUP_OPTIONS = [('Business analyst','Business analyst'),('C/C++','C/C++'),('DevOps','DevOps'),('Frontend','Frontend'),('iOS','iOS'),('Java','Java'),('.NET','.NET'),('Phyton','Phyton'),('QA','QA')]
+    GROUP_OPTIONS = [('Autosar','Autosar'),('Business analyst','Business analyst'),('C/C++','C/C++'),('DevOps','DevOps'),('Frontend','Frontend'),('iOS','iOS'),('Java','Java'),('.NET','.NET'),('Python','Python'),('QA','QA')]
 
     name = models.CharField(max_length=200)
     recruiter = models.CharField(choices=RECRUITER_OPTIONS, max_length=200)

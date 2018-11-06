@@ -12,21 +12,21 @@
                 <button class="btn btn-info btn" id="btn_canidates_ios" tag="iOS">iOS</button>     
                 <button class="btn btn-info btn" id="btn_canidates_java" tag="Java">Java</button>
                 <button class="btn btn-info btn" id="btn_canidates_net" tag=".NET">.NET</button>
-                <button class="btn btn-info btn" id="btn_canidates_python" tag="Phyton">Phyton</button>
+                <button class="btn btn-info btn" id="btn_canidates_python" tag="Python">Python</button>
                 <button class="btn btn-info btn" id="btn_canidates_qa" tag="QA">QA</button>
         </div>
         <table class="candidates">    
-            <tr>
-                    <th style="background-color: #83c1f3">Candidate</th>
-                    <th style="background-color: #83c1f3">Group</th>
-                    <th style="background-color: #83c1f3">Recruiter</th>
-                    <th style="background-color: #83c1f3">Contact date</th>
+            <tr >
+                    <th style="background-color: #83c1f3" width="14%" >Candidate</th>
+                    <th style="background-color: #83c1f3" width="8%" >Group</th>
+                    <th style="background-color: #83c1f3" width="7%" >Recruiter</th>
+                    <th style="background-color: #83c1f3" width="8%" >Contact date</th>
                     <!-- <th style="background-color: #83c1f3">Tech interview date</th> -->
-                    <th style="background-color: #83c1f3">Tech interviewer</th>
-                    <th style="background-color: #83c1f3">Technical Level</th>
+                    <th style="background-color: #83c1f3" width="10%" >Tech interviewer</th>
+                    <th style="background-color: #83c1f3" width="10%" >Technical Level</th>
                     <!-- <th style="background-color: #83c1f3">BUL interview date</th> -->
-                    <th style="background-color: #83c1f3">BUL interviewer</th>
-                    <th style="background-color: #83c1f3">Status</th>
+                    <th style="background-color: #83c1f3" width="10%" >BUL interviewer</th>
+                    <th style="background-color: #83c1f3" width="13%" >Status</th>
             </tr>
                     {% for candidate in candidates %}  
                         <tr class="candidate_entry" id="{{ candidate.id }}" tag="{{ candidate.group }}">

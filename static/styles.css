@@ -22,7 +22,7 @@
   float: left;
   min-width: 15%;
   max-width: 15%;
-  min-height: 100vh;
+  height: 100vh;
   background: #7386D5;
   color: #fff;
   transition: all 0.3s;
@@ -76,6 +76,9 @@ a, a:hover, a:focus {
     overflow-y: scroll;
     margin-top: 10px;
     block-size: 620px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
   } 
 
   .questions_table {
@@ -204,6 +207,9 @@ tr:nth-child(even) {
   margin: auto;
   block-size: 660px;
   margin-top: 20px;
+  margin-right:auto;
+  margin-left:auto;
+  width:100%;
 } 
 
 .questions_chategory{
@@ -225,14 +231,6 @@ select{
   background: inherit;
   font-weight: bold;
 }
-/* 
-<option value="">In process</option>
-<option value="pass">Pass all the process</option>
-<option value="rejeceted_tech">Rejected technical interview</option>
-<option value="rejeceted_bul">Rejected BUL interview</option>
-<option value="rejeceted_preoffer">Rejected pre-offer</option>
-<option value="rejeceted_offer">Rejected offer</option>
-<option value="stand_by">Stand by</option> */
 
 /* Buttons */
 
@@ -291,7 +289,7 @@ select{
 
 .a_chart{
   display: inline-block;
-  width: 400px; 
+  width: 280px; 
 }
 
 .chart_header{
@@ -321,17 +319,17 @@ select{
   display: block;
   float: right;
   max-height: 400px; 
-  padding-top: 20px;
 }
 
 li{
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
-  padding: 8px 12px;
+  padding: 4px 12px;
   margin-bottom: -1px;
   border: 1px solid #ddd;
   line-height: 1;
   list-style-type: none;
+  min-width: 400px;
 }
 
 canvas{
@@ -342,8 +340,7 @@ canvas{
 .lable{
   display: block;
   float: right;
-  margin-left: 200px;
-  min-width: 10px;
+  min-width: 70px;
   padding: 3px 7px;
   font-size: 11px;
   font-weight: bold;

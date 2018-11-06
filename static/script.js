@@ -72,32 +72,35 @@ $( document ).ready(function() {
 
         switch ($.trim(status)) { 
             case 'In process': 
-                $(this).css("color", "#CFD91E");  
+                $(this).css("color", "#F3A712");  
+                break;
+            case 'Pass all process': 
+                $(this).css("color", "#46A667");         
                 break;
             case 'Stand by': 
                 $(this).css("color", "#2CED1A"); 
                 break;
-            case 'Pass all process': 
-                $(this).css("color", "#124E0D");         
-                break;
-            case 'Rejected by BUL': 
-                $(this).css("color", "#720707");  
-                break; 
             case 'Rejected technical interview': 
-                $(this).css("color", "#E74E08");  
-                break;     
+                $(this).css("color", "#D62828");  
+                break;    
+            case 'Rejected by recruiter':
+                $(this).css("color", "#640D14");  
+                break;  
+            case 'Rejected by BUL': 
+                $(this).css("color", "#960200");  
+                break;  
+            case 'Rejected by BUL/Client': 
+                $(this).css("color", "#960200");  
+                break;   
             case 'Rejected by client': 
-                $(this).css("color", "#EF0808");  
-                break;     
+                $(this).css("color", "#960200");  
+                break;        
             case 'Rejected pre-offer': 
-                $(this).css("color", "#2020DE");  
+                $(this).css("color", "#4392F1");  
                 break;        
             case 'Rejected offer': 
-                $(this).css("color", "#A820B4");  
-                break;                 
-            case 'Rejected by recruiter':
-                $(this).css("color", "#E6286A");  
-                break;   
+                $(this).css("color", "#0E427A");  
+                break;                  
             default:
                 $(this).css("color", "Black");  
         }
