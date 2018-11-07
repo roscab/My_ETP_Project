@@ -26,11 +26,11 @@
                 {% endfor %}    
             </div>  
             <div>
-                <button class="btn btn-primary btn-lg" id="btn_report" style="float: right">Generate report</button>
+                <button class="btn btn-primary btn-lg" id="btn_report" style="float: right; margin-right: 140px">Generate report</button>
             </div>   
         </div>
             
-        <div class="interview_template">
+        <div class="interview_template" style="width:90%; margin-left: auto; margin-right: auto">
                 <h1 class="candidate" style="display:none">Candidate name: _____________________</h1>
                 <table class="questions_table" style="display:none">
                     <tr>
@@ -64,7 +64,7 @@
 
             <div class="btn_print" style="display:none" >
                     <button class="btn btn-primary btn-lg"  style="float: right; margin: 30px"  id="btn_print" >Print</button>
-                    <a href="/" id="btn_home" ><button class="btn btn-danger btn-lg"  style="float: left; margin: 30px">Go back</button></a>
+                    <a href="/" id="go_btn_home" class="btn btn-danger btn-lg"  style="float: left; margin: 30px">Go back</a> 
             </div>
         </div> 
         {% endblock %}

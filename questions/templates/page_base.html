@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ERNI Recruting Platform</title>
+    <link rel="icon"       href="{% static 'images/ERNI_logo.png' %}">
     <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
     <script src="{% static 'jquery-3.1.1.min.js' %}"></script>
@@ -29,13 +30,13 @@
                         </div>
                 
                         <ul class="list-unstyled components">
-                                    <a href="/questions" style="display: inline-block;"><button class="btn btn-warning btn-lg" id="btn_home" >Home</button></a>
+                                    <a href="/" class="btn btn-warning btn-lg" id="btn_home" style="display: inline-block;">Home</a>
                                     <div class="meniu_buttons">
-                                            <a href="/candidates" style="display: inline-block;"><button class="btn btn-info btn-lg" id="btn_candidates">Candidate status</button></a>
-                                            <a href="/data" style="display: inline-block;"><button class="btn btn-danger btn-lg" id="btn_data" >Data analysis</button></a>
-                                            <a href="/questions" style="display: inline-block;"><button class="btn btn-primary btn-lg" id="btn_interview">Interview questions</button></a>
-                                            <button style="background-color: gray" class="btn btn-warning btn-lg" href="#" role="no_filter" style="opacity: 0.5" id="btn_candidate_report">Interview Report</button>
-                                            <button style="background-color: gray" class="btn btn-primary btn-lg" href="#" role="no_filter" style="opacity: 0.5" id="btn_calendar">Calendar</button>
+                                            <a href="/candidates" class="btn btn-info btn-lg" id="btn_candidates" style="display: inline-block;">Candidate status</a>
+                                            <a href="/data" class="btn btn-danger btn-lg" id="btn_data"style="display: inline-block;" >Data analysis</a>
+                                            <a href="/questions" class="btn btn-primary btn-lg" id="btn_interview" style="display: inline-block;">Interview questions</a>
+                                            <a href="/admin"  class="btn btn-warning btn-lg" id="btn_admin" style="display: inline-block;">Admin</a>
+                                            <!-- <button style="background-color: gray" class="btn btn-warning btn-lg" href="#" role="no_filter" style="opacity: 0.5" id="btn_candidate_report">Interview Report</button> -->
                                    </div>
                         </ul>
                     </nav>

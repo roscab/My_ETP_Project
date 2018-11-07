@@ -1,5 +1,7 @@
 {% extends 'page_base.html' %}
 
+{% load static %}
+
 {% block content %}
 <div class="main_content">
         <div class="candidates_chategory">
@@ -17,14 +19,12 @@
         </div>
         <table class="candidates">    
             <tr >
-                    <th style="background-color: #83c1f3" width="14%" >Candidate</th>
+                    <th style="background-color: #83c1f3" width="14%">Candidate</th>
                     <th style="background-color: #83c1f3" width="8%" >Group</th>
                     <th style="background-color: #83c1f3" width="7%" >Recruiter</th>
                     <th style="background-color: #83c1f3" width="8%" >Contact date</th>
-                    <!-- <th style="background-color: #83c1f3">Tech interview date</th> -->
                     <th style="background-color: #83c1f3" width="10%" >Tech interviewer</th>
                     <th style="background-color: #83c1f3" width="10%" >Technical Level</th>
-                    <!-- <th style="background-color: #83c1f3">BUL interview date</th> -->
                     <th style="background-color: #83c1f3" width="10%" >BUL interviewer</th>
                     <th style="background-color: #83c1f3" width="13%" >Status</th>
             </tr>
@@ -34,26 +34,30 @@
                             <td>{{ candidate.group }}</td>
                             <td>{{ candidate.recruiter }}</td>
                             <td>{{ candidate.contact_date }}</td>  
-                            <!-- <td>{{ candidate.technical_interview_date }}</td> -->
-                            <td>{{ candidate.technical_interviewer }}</td>
+                            <td>{{ candidate.technical_interviewer }}
+                                <img class="tech_feedback_icon" id="icon_{{ candidate.id }}" src="{% static 'images/tech_feedback.ico' %}">
+                                <img class="tech_feedback_date_icon" id="date_{{ candidate.id }}" src="{% static 'images/calendar-icon.png' %}">
+                                <div class="popup">
+                                    <span class="popup_feedback" id="popup_feedback_{{ candidate.id }}"> {{ candidate.technical_feedback }}
+                                        <span class="close_popup"><b>X</b></span>
+                                    </span>
+                                </div>
+                                <div class="popup">
+                                    <span class="popup_feedback_date" id="popup_feedback_date_{{ candidate.id }}"> {{ candidate.technical_interview_date }}
+                                            <span class="close_popup_date"><b>X</b></span>
+                                    </span>
+                                </div>  
+                            </td>
                             <td>{{ candidate.technical_level }}</td>  
-                            <!-- <td>{{ candidate.bul_interview_date }}</td>  -->
-                            <td>{{ candidate.bul_intervier }}</td>
+                            <td>{{ candidate.bul_intervier }}
+                            </td>
                             <td class="status" style="font-weight: bold">{{ candidate.status }}</td>
-                            <!-- <td><select name="candidate_status">    
-                                <option value="db" selected>{{ candidate.status }}</option>
-                                <option value="progress" id="progress">In process</option>
-                                <option value="pass">Pass all the process</option>
-                                <option value="rejeceted_tech">Rejected technical interview</option>
-                                <option value="rejeceted_bul">Rejected BUL interview</option>
-                                <option value="rejeceted_preoffer">Rejected pre-offer</option>
-                                <option value="rejeceted_offer">Rejected offer</option>
-                                <option value="stand_by">Stand by</option>
-                                </select>
-                            </td> -->
                         </tr>
                     </div>    
                     {% endfor %}   
                 </table>
+        <div>
+            <button class="btn btn-primary btn" id="btn_add_candidate" tag="add_candidate" >Add candidate +</button>    
+        </div>        
 </div>    
 {% endblock %}

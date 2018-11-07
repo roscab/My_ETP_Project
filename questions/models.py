@@ -34,6 +34,7 @@ class Candidate(models.Model):
     bul_intervier = models.CharField(max_length=200)
     group = models.CharField(choices=GROUP_OPTIONS, max_length=200)
     status = models.CharField(choices=STATUS_OPTIONS, max_length=200)
+    technical_feedback = models.CharField( max_length=9999, default="no info")
     # next_step = models.CharField(max_length=200)
     # created_at = models.DateTimeField(default=datetime.now, blank=True)
     

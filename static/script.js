@@ -1,6 +1,53 @@
 
 var isSelected = {};
 
+// on page load execute below instructions
+$( document ).ready(function() {
+    
+    $("#icon_462").css("visibility", "visible");
+    $("#date_462").css("visibility", "visible");
+     
+    $(".status").each(function( index ) {
+        var status = $(this).text();
+
+        switch ($.trim(status)) { 
+            case 'In process': 
+                $(this).css("color", "#F3A712");  
+                break;
+            case 'Pass all process': 
+                $(this).css("color", "#46A667");         
+                break;
+            case 'Stand by': 
+                $(this).css("color", "#2CED1A"); 
+                break;
+            case 'Rejected technical interview': 
+                $(this).css("color", "#D62828");  
+                break;    
+            case 'Rejected by recruiter':
+                $(this).css("color", "#640D14");  
+                break;  
+            case 'Rejected by BUL': 
+                $(this).css("color", "#960200");  
+                break;  
+            case 'Rejected by BUL/Client': 
+                $(this).css("color", "#960200");  
+                break;   
+            case 'Rejected by client': 
+                $(this).css("color", "#960200");  
+                break;        
+            case 'Rejected pre-offer': 
+                $(this).css("color", "#4392F1");  
+                break;        
+            case 'Rejected offer': 
+                $(this).css("color", "#0E427A");  
+                break;                  
+            default:
+                $(this).css("color", "Black");  
+        }
+     });  
+});
+
+
 $(document).ready(function(){
     $(".btn").click(function(){    
             var questionType = $(this).attr("tag");
@@ -66,45 +113,17 @@ $(document).ready(function(){
     });
 });
 
-$( document ).ready(function() {
-    $(".status").each(function( index ) {
-        var status = $(this).text();
-
-        switch ($.trim(status)) { 
-            case 'In process': 
-                $(this).css("color", "#F3A712");  
-                break;
-            case 'Pass all process': 
-                $(this).css("color", "#46A667");         
-                break;
-            case 'Stand by': 
-                $(this).css("color", "#2CED1A"); 
-                break;
-            case 'Rejected technical interview': 
-                $(this).css("color", "#D62828");  
-                break;    
-            case 'Rejected by recruiter':
-                $(this).css("color", "#640D14");  
-                break;  
-            case 'Rejected by BUL': 
-                $(this).css("color", "#960200");  
-                break;  
-            case 'Rejected by BUL/Client': 
-                $(this).css("color", "#960200");  
-                break;   
-            case 'Rejected by client': 
-                $(this).css("color", "#960200");  
-                break;        
-            case 'Rejected pre-offer': 
-                $(this).css("color", "#4392F1");  
-                break;        
-            case 'Rejected offer': 
-                $(this).css("color", "#0E427A");  
-                break;                  
-            default:
-                $(this).css("color", "Black");  
-        }
-     });  
+$(document).ready(function(){          
+    $("#btn_print").click(function(){      
+        $(".candidate").show();     
+        $("#btn_print").hide(); 
+        $("#go_btn_home").hide(); 
+        window.print();
+        $("#btn_print").show(); 
+        $("#go_btn_home").show(); 
+        $(".candidate").hide();
+        
+    });
 });
 
 
@@ -124,3 +143,33 @@ $(document).ready(function(){
               });        
     });
 });
+
+$(document).ready(function(){
+    $(".tech_feedback_icon").click(function(){    
+        var popup = document.getElementById("popup_feedback_462");
+        popup.classList.toggle("show");
+    });
+});
+
+$(document).ready(function(){
+    $(".tech_feedback_date_icon").click(function(){    
+        var popup = document.getElementById("popup_feedback_date_462");
+        popup.classList.toggle("show");
+    });
+});
+
+$(document).ready(function(){
+    $(".close_popup").click(function(){    
+        var popup = document.getElementById("popup_feedback_462");
+        popup.classList.toggle("show");
+    });
+});
+
+$(document).ready(function(){
+    $(".close_popup_date").click(function(){    
+        var popup = document.getElementById("popup_feedback_date_462");
+        popup.classList.toggle("show");
+    });
+});
+
+

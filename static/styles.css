@@ -205,7 +205,7 @@ tr:nth-child(even) {
   overflow: hidden;
   overflow-y: scroll;
   margin: auto;
-  block-size: 660px;
+  block-size: 610px;
   margin-top: 20px;
   margin-right:auto;
   margin-left:auto;
@@ -230,6 +230,122 @@ select{
   border: none;
   background: inherit;
   font-weight: bold;
+}
+
+.tech_feedback_icon
+{
+  cursor: pointer;
+  width: 20px; 
+  float: right;
+  margin-top: 3px;
+  visibility: hidden;
+}
+
+.tech_feedback_date_icon
+{
+  cursor: pointer;
+  width: 17px; 
+  float: right;
+  margin-top: 4px;
+  margin-right: 8px;
+  visibility: hidden;
+}
+
+.popup {
+  position: relative;
+  display: inline-block;
+}
+
+/* The actual popup */
+.popup .popup_feedback {
+  visibility: hidden;
+  cursor: default;
+  width: 600px; 
+  background-color:#3993DD;
+  color: #fff;
+  text-align: center;
+  border-radius: 20px;
+  position: absolute;
+  z-index: 1;
+  margin-top: 15px;
+  margin-left: auto; 
+  margin-right: auto; 
+  padding: 10px;
+  padding-right: 40px;
+}
+
+.popup .popup_feedback_date {
+  visibility: hidden;
+  cursor: default;
+  width: 200px; 
+  background-color:#3993DD;
+  color: #fff;
+  text-align: center;
+  border-radius: 20px;
+  position: absolute;
+  z-index: 1;
+  margin-top: 15px;
+  margin-left: auto; 
+  margin-right: auto; 
+  padding: 10px;
+  padding-right: 40px;
+}
+
+.popup_feedback:after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  transform: rotate(-45deg);
+  background: #3993DD;
+  position: absolute;
+  z-index: -1;
+  top: -8px;
+  left: 54px;
+}
+
+.popup_feedback_date:after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  transform: rotate(-45deg);
+  background: #3993DD;
+  position: absolute;
+  z-index: -1;
+  top: -8px;
+  left: 21px;
+}
+
+.close_popup{
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  top: 10px;
+  right: 20px;
+}
+
+.close_popup_date{
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  top: 10px;
+  right: 20px;
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
 }
 
 /* Buttons */
@@ -259,7 +375,7 @@ select{
   opacity: 0.8;
 }
 
-#btn_calendar{
+#btn_admin{
   margin-left: 5px;
   width: 200px;
   margin-bottom: 2px; 
