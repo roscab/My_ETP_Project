@@ -4,7 +4,6 @@
 {% load static %}
 
 {% block content%}
-
 <div class="chart_header">
         <img class="logo"  src="{% static 'images/chart_icon.png' %}" style="width: 20px">
     <span style="color: rgb(75, 75, 75); vertical-align: middle"><b style=>Candidates per domain</b></span>
@@ -14,80 +13,79 @@
         <canvas id="data-chart" width="100%" height="100%"></canvas>         
     </div>  
     <div class="chart_info"> 
-            <li>Total
-                <span class="lable" id="candidates_total">{{  data.total_no_candidates }} </span>
-            </li>
-            <li>Autosar
-                <span class="lable"  id="candidates_autosar">{{ data.autosar_candidates }} ({{data.autosar_percentage}}%)</span>
-            </li>
-            <li>Business analyst
-                <span class="lable" id="candidates_ba">{{ data.business_analyst_candidates }} ({{data.business_analyst_percentage}}%)</span>
-            </li>
-            <li>C/C++
+        <li>Total
+            <span class="lable" id="candidates_total">{{  data.total_no_candidates }} </span>
+        </li>
+        <li>Autosar
+            <span class="lable"  id="candidates_autosar">{{ data.autosar_candidates }} ({{data.autosar_percentage}}%)</span>
+        </li>
+        <li>Business analyst
+            <span class="lable" id="candidates_ba">{{ data.business_analyst_candidates }} ({{data.business_analyst_percentage}}%)</span>
+        </li>
+        <li>C/C++
                 <span class="lable" id="candidates_c">{{ data.c_candidates }} ({{data.c_percentage}}%)</span>
-            </li>
-            <li>DevOps
-                <span class="lable " id="candidates_devops">{{ data.devops_candidates }} ({{data.devops_percentage}}%)</span>
-            </li>
-            <li>Frontend
-                <span class="lable" id="candidates_frontend">{{ data.frontend_candidates }} ({{data.frontend_percentage}}%)</span>
-            </li>
-            <li>iOS
-                <span class="lable" id="candidates_ios">{{ data.ios_candidates }} ({{data.ios_percentage}}%)</span>
-            </li>    
-            <li>Java
-                <span class="lable" id="candidates_java">{{ data.java_candidates }} ({{data.java_percentage}}%)</span>
-            </li>    
-            <li>.Net
-                <span class="lable" id="candidates_net">{{ data.net_candidates }} ({{data.net_percentage}}%)</span>
-            </li>    
-            <li>Python
-                <span class="lable" id="candidates_python">{{ data.python_candidates }} ({{data.python_percentage}}%)</span>
-            </li>    
-            <li>QA
-                <span class="lable" id="candidates_qa" >{{ data.qa_candidates }} ({{data.qa_percentage}}%)</span>
-            </li>
-    </div>   
-</div>    
+        </li>
+        <li>DevOps
+            <span class="lable " id="candidates_devops">{{ data.devops_candidates }} ({{data.devops_percentage}}%)</span>
+        </li>
+        <li>Frontend
+            <span class="lable" id="candidates_frontend">{{ data.frontend_candidates }} ({{data.frontend_percentage}}%)</span>
+        </li>
+        <li>iOS
+            <span class="lable" id="candidates_ios">{{ data.ios_candidates }} ({{data.ios_percentage}}%)</span>
+        </li>    
+        <li>Java
+            <span class="lable" id="candidates_java">{{ data.java_candidates }} ({{data.java_percentage}}%)</span>
+        </li>    
+        <li>.Net
+            <span class="lable" id="candidates_net">{{ data.net_candidates }} ({{data.net_percentage}}%)</span>
+        </li>    
+        <li>Python
+            <span class="lable" id="candidates_python">{{ data.python_candidates }} ({{data.python_percentage}}%)</span>
+        </li>    
+        <li>QA
+            <span class="lable" id="candidates_qa" >{{ data.qa_candidates }} ({{data.qa_percentage}}%)</span>
+        </li>
+    </div>    
+</div>     
 
 <div class="chart_header">
     <img class="logo"  src="{% static 'images/chart_icon.png' %}" style="width: 20px">
-<span style="color: rgb(75, 75, 75); vertical-align: middle"><b style=>Candidates per status</b></span>
+    <span style="color: rgb(75, 75, 75); vertical-align: middle"><b style=>Candidates per status</b></span>
 </div>
 <div class="chart_body">
     <div class="a_chart">
         <canvas id="data-chart2" width="100%" height="100%"></canvas>         
     </div>  
     <div class="chart_info"> 
-            <li>Total
-                <!-- <span class="lable" id="candidates_total">{{  data.total_no_candidates }} </span> -->
-                <span class="lable" id="candidates_total">187</span>
-            </li>
-            <li>In process
-                <span class="lable"  id="status_inProcess">{{ data.inProcess_candidates }} ({{data.inProcess_percentage}}%)</span>
-            </li>
-            <li>Stand by
-                <span class="lable" id="status_standBy">{{ data.standBy_candidates }} ({{data.standBy_percentage}}%)</span>
-            </li>
-            <li>Pass all process
-                <span class="lable" id="status_pass">{{ data.passAllProcess_candidates }} ({{data.passAllProcess_percentage}}%)</span>
-            </li>
-            <li>Rejected technical interview
-                <span class="lable " id="status_tech">{{ data.rejectedTechnical_candidates }} ({{data.rejectedTechnical_percentage}}%)</span>
-            </li>
-            <li>Rejected by BUL/Client
-                <span class="lable" id="status_bul">{{ data.rejectedClientBULL_candidates }} ({{data.rejectedClientBUL_percentage}}%)</span>
-            </li>
-            <li>Rejected by recuriter
-                <span class="lable" id="status_recruiter">{{ data.rejectedRecruting_candidates }} ({{data.rejectedRecruting_percentage}}%)</span>
-            </li>    
-            <li>Rejected pre-offer
-                <span class="lable" id="status_preoffer">{{ data.rejectedPreOffer_candidates }} ({{data.rejectedPreOffer_percentage}}%)</span>
-            </li>    
-            <li>Rejected offer
-                <span class="lable" id="status_offer">{{ data.rejectedOffer_candidates }} ({{data.rejectedOffer_percentage}}%)</span>
-            </li>    
+        <li>Total
+         <!-- <span class="lable" id="candidates_total">{{  data.total_no_candidates }} </span> -->
+        <span class="lable" id="candidates_total">187</span>
+        </li>
+        <li>In process
+            <span class="lable"  id="status_inProcess">{{ data.inProcess_candidates }} ({{data.inProcess_percentage}}%)</span>
+        </li>
+        <li>Stand by
+            <span class="lable" id="status_standBy">{{ data.standBy_candidates }} ({{data.standBy_percentage}}%)</span>
+        </li>
+        <li>Pass all process
+            <span class="lable" id="status_pass">{{ data.passAllProcess_candidates }} ({{data.passAllProcess_percentage}}%)</span>
+        </li>
+        <li>Rejected technical interview
+            <span class="lable " id="status_tech">{{ data.rejectedTechnical_candidates }} ({{data.rejectedTechnical_percentage}}%)</span>
+        </li>
+        <li>Rejected by BUL/Client
+            <span class="lable" id="status_bul">{{ data.rejectedClientBULL_candidates }} ({{data.rejectedClientBUL_percentage}}%)</span>
+        </li>
+        <li>Rejected by recuriter
+            <span class="lable" id="status_recruiter">{{ data.rejectedRecruting_candidates }} ({{data.rejectedRecruting_percentage}}%)</span>
+        </li>    
+        <li>Rejected pre-offer
+            <span class="lable" id="status_preoffer">{{ data.rejectedPreOffer_candidates }} ({{data.rejectedPreOffer_percentage}}%)</span>
+        </li>    
+        <li>Rejected offer
+            <span class="lable" id="status_offer">{{ data.rejectedOffer_candidates }} ({{data.rejectedOffer_percentage}}%)</span>
+        </li>    
     </div>   
 </div> 
-
 {% endblock %}

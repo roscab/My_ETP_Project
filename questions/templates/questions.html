@@ -3,19 +3,19 @@
         {% block content %}      
         <div class="main_content">          
             <div class="questions_chategory">
-                    <button class="btn btn-primary btn" id="btn_all" tag="all" >All</button>
-                    <button class="btn btn-info btn" id="btn_istqb" tag="ISTQB">ISTQB</button>
-                    <button class="btn btn-info btn" id="btn_can" tag="CAN">CAN</button>
-                    <button class="btn btn-info btn" id="btn_oop" tag="OOP">OOP</button>
-                    <button class="btn btn-info btn" id="btn_logic" tag="Logic">Logic</button>
-                    <button class="btn btn-info btn" id="btn_personal" tag="Personal" role="filter_personal">Personal</button>
-                    <button class="btn btn-danger btn" id="btn_selected" tag="selected">Selected</button>
+                <button class="btn btn-primary btn" id="btn_all" tag="all" >All</button>
+                <button class="btn btn-info btn" id="btn_istqb" tag="ISTQB">ISTQB</button>
+                <button class="btn btn-info btn" id="btn_can" tag="CAN">CAN</button>
+                <button class="btn btn-info btn" id="btn_oop" tag="OOP">OOP</button>
+                <button class="btn btn-info btn" id="btn_logic" tag="Logic">Logic</button>
+                <button class="btn btn-info btn" id="btn_personal" tag="Personal" role="filter_personal">Personal</button>
+                <button class="btn btn-danger btn" id="btn_selected" tag="selected">Selected</button>
             </div>
             <div class="questions"> 
                 {% for question in questions %}
                     <div class="question" tag="{{ question.subject }}">
-                        <input id="{{ question.id }}" type="checkbox" option="checked">
-                        <label for="{{ question.id }}"> {{ question.question }}
+                        <input class="input_question" id="{{ question.id }}" type="checkbox" option="checked">
+                        <label class="question_label" for="{{ question.id }}"> {{ question.question }}
                             {% if question.answer != 'N.A.' %}
                             <div class="tag_answer">+ Answer</div>
                             {% endif %} 
@@ -31,40 +31,40 @@
         </div>
             
         <div class="interview_template" style="width:90%; margin-left: auto; margin-right: auto">
-                <h1 class="candidate" style="display:none">Candidate name: _____________________</h1>
-                <table class="questions_table" style="display:none">
-                    <tr>
+            <h1 class="candidate" style="display:none">Candidate name: _____________________</h1>
+            <table class="questions_table" style="display:none">
+                <tr>
                     <th style="background-color: #83c1f3">Question</th>
                     <th style="background-color: #83c1f3">Level</th>
                     <th style="background-color: #83c1f3; width:30%">Remarks</th>
                     <th style="background-color: #83c1f3">Grade</th>
+                </tr>
+                {% for question in questions %}  
+                    <tr class="entry" id="{{ question.id }}" style="display:none">
+                        <td><b>{{ question.question }}</b></td>
+                        <td>{{ question.dificulty_level }}</td>
+                        <td></td>
+                        <td></td>  
                     </tr>
-                    {% for question in questions %}  
-                        <tr class="entry" id="{{ question.id }}" style="display:none">
-                            <td><b>{{ question.question }}</b></td>
-                            <td>{{ question.dificulty_level }}</td>
+                    <tr class="entry" id="{{ question.id }}" style="display:none">
+                        {% if question.answer != 'N.A.' %}
+                            <td style="height: 100px; overflow: hidden;"><b>Answer:</b> {{ question.answer }} </td>
                             <td></td>
-                            <td></td>  
-                        </tr>
-                        <tr class="entry" id="{{ question.id }}" style="display:none">
-                            {% if question.answer != 'N.A.' %}
-                                <td style="height: 100px; overflow: hidden;"><b>Answer:</b> {{ question.answer }} </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            {% else %}
-                                <td style="height: 100px; overflow: hidden;"></td>  
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            {% endif %} 
-                        </tr>
-                    {% endfor %}   
-                </table>
+                            <td></td>
+                            <td></td>
+                        {% else %}
+                            <td style="height: 100px; overflow: hidden;"></td>  
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        {% endif %} 
+                    </tr>
+                {% endfor %}   
+            </table>
 
             <div class="btn_print" style="display:none" >
-                    <button class="btn btn-primary btn-lg"  style="float: right; margin: 30px"  id="btn_print" >Print</button>
-                    <a href="/" id="go_btn_home" class="btn btn-danger btn-lg"  style="float: left; margin: 30px">Go back</a> 
+                <button class="btn btn-primary btn-lg"  style="float: right; margin: 30px"  id="btn_print" >Print</button>
+                <a href="/" id="go_btn_home" class="btn btn-danger btn-lg"  style="float: left; margin: 30px">Go back</a> 
             </div>
         </div> 
         {% endblock %}

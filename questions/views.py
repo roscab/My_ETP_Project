@@ -13,6 +13,10 @@ def candidates(request):
     candidates = Candidate.objects.all()
     return render(request, 'candidates.html', {'candidates': candidates})
 
+def recruiters(request):
+    recruiter = "Veronica M."
+    return render(request, 'candidates.html', {'recruiters': recruiters})
+
 def questions(request):
     questions = Question.objects.all()
     return render(request, 'questions.html', {'questions': questions})

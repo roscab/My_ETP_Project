@@ -129,6 +129,9 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $(".btn").click(function(){    
+        console.log($(this).attr("id"));
+        if($(this).attr("id") != 'btn_add_candidate' && $(this).attr("id") != 'btn_cancel_entry'){
+
             var candidateType = $(this).attr("tag");
 
             $(".candidate_entry").each(function( index ) {
@@ -141,6 +144,7 @@ $(document).ready(function(){
                     if($(this).attr("tag") ==  candidateType)
                         $(this).show();
               });        
+        }      
     });
 });
 
@@ -172,4 +176,16 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+    $("#btn_add_candidate").click(function(){  
+        $("#btn_add_candidate").hide()
+        $("#new_candidate_window").css("visibility", "visible");
+    });
+});
 
+$(document).ready(function(){
+    $("#btn_cancel_entry").click(function(){  
+        $("#new_candidate_window").css("visibility", "hidden");
+        $("#btn_add_candidate").show()
+    });
+});
