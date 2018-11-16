@@ -21,6 +21,10 @@ def questions(request):
     questions = Question.objects.all()
     return render(request, 'questions.html', {'questions': questions})
 
+def report(request):
+    candidates = Candidate.objects.all()
+    return render(request, 'report.html', {'candidates': candidates})    
+
 def data(request):
     data = {
         "total_no_candidates": Candidate.objects.count(),
@@ -37,7 +41,7 @@ def data(request):
         "qa_candidates": Candidate.objects.filter(group='QA').count(),
         "autosar_percentage":  round(Candidate.objects.filter(group='Autosar').count()/Candidate.objects.count()*100, 1),
         "business_analyst_percentage":  round(Candidate.objects.filter(group='Business analyst').count()/Candidate.objects.count()*100, 1),
-        "c_percentage":  round(Candidate.objects.filter(group='C').count()/Candidate.objects.count()*100, 1),
+        "c_percentage":  round(Candidate.objects.filter(group='C/C++').count()/Candidate.objects.count()*100, 1),
         "devops_percentage":  round(Candidate.objects.filter(group='DevOps').count()/Candidate.objects.count()*100, 1),
         "frontend_percentage":  round(Candidate.objects.filter(group='Frontend').count()/Candidate.objects.count()*100, 1),
         "ios_percentage":  round(Candidate.objects.filter(group='iOS').count()/Candidate.objects.count()*100, 1),

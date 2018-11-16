@@ -57,19 +57,20 @@
             {% endfor %}   
         </table>
         <div>
-            <button class="btn btn-primary btn" id="btn_add_candidate" >Add candidate +</button>    
+            <button class="btn btn-primary btn" id="btn_add_candidate" style="margin-top: 20px">Add candidate +</button>    
         </div> 
 </div>     
      
         
         <div class="container_new_candidate" id="new_candidate_window">
-            <form>
-              <div class="row">
+                <form>
+
+                <div class="row">
                 <div class="col-25">
                     <label class="new_entry" for="lname">Candidate name:</label>
                 </div>
                 <div class="col-75">
-                  <input type="text" id="fname" name="firstname" placeholder="John Doe">
+                  <input type="text" name="name" placeholder="John Doe">
                 </div>
               </div>
               <div class="row">
@@ -77,11 +78,25 @@
                         <label class="new_entry" for="candidaate_contact_details">Candidate contact details:</label>
                     </div>
                     <div class="col-75">
-                      <input type="text" id="fname" name="phone_number" placeholder="Phone number: +34 123 456 789">
-                      <input type="text" id="fname" name="firstname" placeholder="Email address: john_doe@gmail.com">
-                      <input type="text" id="fname" name="firstname" placeholder="Skype id: John.Doe.2018">
+                      <input type="text"  name="phone_number" placeholder="Phone number: +34 123 456 789">
+                      <input type="text"  name="email" placeholder="Email address: john_doe@gmail.com">
+                      <input type="text"  name="skype_id" placeholder="Skype id: John.Doe.2018">
                     </div>
                   </div>
+                  <div class="row">
+                        <div class="col-25">
+                            <label class="new_entry" for="group">Contact mode:</label>
+                        </div>
+                        <div class="col-75">    
+                                <select id="candidate_domain" name="Candidate domain">
+                                    <option disabled selected value> Select a contact mode </option>
+                                    <option value="applied">Applied on his own</option> 
+                                    <option value="linkedin">LinkedIn</option> 
+                                    <option value="phone">Phone</option> 
+                                    <option value="refferal">Refferal</option> 
+                                </select>
+                    </div>
+                </div> 
               <div class="row">
                     <div class="col-25">
                         <label class="new_entry" for="group">Candidate domain:</label>
@@ -129,7 +144,7 @@
                     <option value="Daiel">Daniel</option>
                   </select>
                 </div>
-              </div>
+              </div> 
               <div class="row">
                     <div class="col-25">
                         <button class="btn btn-primary btn" id="btn_cancel_entry">Cancel</button>  

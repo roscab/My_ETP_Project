@@ -1,0 +1,114 @@
+{% extends 'page_base.html' %}
+
+{% load static %}
+
+{% block content %}      
+<div class="main_content">   
+    <table class="candidates">    
+        <tr >
+            <th style="background-color: #83c1f3" >Candidate</th>
+            <th style="background-color: #83c1f3" >Group</th>
+            <th style="background-color: #83c1f3" >Recruiter</th>
+            <th style="background-color: #83c1f3" >Contact date</th>
+            <th style="background-color: #83c1f3" >Tech interviewer</th>
+            <th style="background-color: #83c1f3" >BUL interviewer</th>
+            <th style="background-color: #83c1f3" >Status</th>
+            <th style="background-color: #83c1f3" width="10%" >Action</th>
+        </tr>
+            
+        {% for candidate in candidates %}  
+            {% if candidate.status == 'Pass recruiter interview' or candidate.status == 'Pass technical interview' %}
+            <tr class="candidate_entry" id="{{ candidate.id }}" tag="{{ candidate.group }}">
+                <td><b>{{ candidate.name }}</b></td>
+                <td>{{ candidate.group }}</td>
+                <td>{{ candidate.recruiter }}</td>
+                <td>{{ candidate.contact_date }}</td>  
+                <td>{{ candidate.technical_interviewer }}</td>
+                <td>{{ candidate.bul_interviewer }}</td>
+                {% if candidate.status == 'Pass recruiter interview' %}
+                <td class="status" style="font-weight: bold">Technical interview pending</td>
+                <td><button class="btn btn-primary btn" id="btn_add_technical_interview" >Write technical report</button> </td>
+                {% else %}
+                <td class="status" style="font-weight: bold">BUL interview pending</td>
+                <td><button class="btn btn-primary btn" id="btn_add_bul_interview" >Write BUL report</button></td> 
+                {% endif %} 
+            </tr>    
+            {% endif %} 
+        {% endfor %}   
+    </table>
+</div>  
+
+
+
+<div class="container_new_candidate" id="new_technical_interview_window">
+    <form>
+        <div class="col-25">
+            <img class="profile_icon" src="{% static 'images/profile.bmp' %}" style="margin: 10px">
+            <label class="new_entry" for="lname">{candidate.name }</label>
+            <label class="new_entry" for="group">{candidate.domain }</label>
+            <button class="btn btn-primary btn" id="btn_cancel_entry">Cancel</button>
+        </div>
+        <div class="col-75">
+            <textarea type="text" name="feedback" placeholder="Enter feedback here" style="height: 450px"></textarea>
+            <div class="col-33">
+                <select id="technical_interviewer" name="tech_interviewer">
+                    <option disabled selected value> Technical validator name</option>
+                    <option value="Eudes">Eudes Costa</option>
+                    <option value="Bogdan">Bogdan Rosca</option>
+                    <option value="Daiel">Daniel Deamorim</option>
+                </select>
+            </div>
+            <div class="col-33">
+                <select id="candidate_level" name="candidate_level">
+                    <option disabled selected value> Select candidate level </option>
+                    <option value="Junior">Junior</option>
+                    <option value="Professional">Professional</option>
+                    <option value="Senior">Senior</option>
+                    <option value="Principale">Principale</option>
+                </select>
+            </div>
+            <div class="col-33">    
+                <input type="text" id="fname" name="contact_date" placeholder="2018-11-22">
+            </div>
+                <input type="submit" value="Submit" id="btn_submit_entry">
+            </div>
+        </form>
+    </div> 
+    
+
+    
+    <div class="container_new_candidate" id="new_bul_interview_window">
+        <form>
+            <div class="col-25">
+                <img class="profile_icon" src="{% static 'images/profile.bmp' %}" style="margin: 10px">
+                <label class="new_entry" for="lname">{candidate.name }</label>
+                <label class="new_entry" for="group">{candidate.domain }</label>
+                <button class="btn btn-primary btn" id="btn_cancel_entry">Cancel</button>
+            </div>
+
+            <div class="col-75">
+                    <textarea type="text" name="feedback" placeholder="Enter feedback here" style="height: 450px"></textarea>
+                <div class="col-33">
+                    <select id="technical_interviewer" name="tech_interviewer">
+                        <option disabled selected value> BUL name </option>
+                        <option value="Eudes">Ana Diez</option>
+                        <option value="Bogdan">Ramon</option>
+                        <option value="Daiel">Daniel</option>
+                    </select>
+                </div>
+                <div class="col-33">
+                        <select id="candidate_level" name="candidate_level">
+                            <option disabled selected value> Select outcome </option>
+                            <option value="Accepted">Accepted</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+                </div>
+                <div class="col-33">    
+                    <input type="text" id="fname" name="contact_date" placeholder="2018-11-22">
+                </div>
+                <input type="submit" value="Submit" id="btn_submit_entry">
+            </div>
+        </form>
+    </div>  
+{% endblock %}
+

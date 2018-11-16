@@ -1,4 +1,33 @@
- /* Header */
+/* Home page */
+.profile_icon{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 10px; 
+}
+
+.profile_text{
+  text-align: center;
+  color: rgb(255, 255, 255);
+  background: #0077AB;
+  margin: 0;
+}
+
+.recruiting_team_text{
+  color: #0077AB;
+  font-family: 'Molengo', Georgia, Times, serif;
+  font-size: 48px;
+  line-height: 60px;
+}
+
+
+
+
+
+
+
+/* Header */
  
 .header{
   display: block; 
@@ -21,8 +50,8 @@
   display: block;
   align-items: stretch;
   float: left;
-  min-width: 15%;
-  max-width: 15%;
+  min-width: 14%;
+  max-width: 14%;
   height: 100vh;
   background: #7386D5;
   color: #fff;
@@ -167,7 +196,7 @@ label.question_label {
   }
   
   input:checked + label.question_label {
-    background-color: #98fc92;
+    background-color: #a2cef7;
     color: #6a8494
   }
   
@@ -355,43 +384,47 @@ select{
 }
 
 #btn_home{
-  margin-left: 5px;
+  margin-left: 10px;
   margin-bottom: 2px; 
-  width: 200px;
+  width: 245px;
   opacity: 0.8;
 }
 
 #btn_interview{
-  margin-left: 5px;
+  margin-left: 10px;
   margin-bottom: 2px; 
-  width: 200px;
+  width: 245px;
   opacity: 0.8;
 }
 
 #btn_candidates{
-  margin-left: 5px;
-  width: 200px;
+  margin-left: 10px;
+  margin-bottom: 2px; 
+  width: 245px;
   margin-bottom: 2px; 
   opacity: 0.8;
 }
 
 #btn_admin{
-  margin-left: 5px;
-  width: 200px;
+  margin-left: 10px;
+  margin-bottom: 2px; 
+  width: 245px;
   margin-bottom: 2px; 
   opacity: 0.6;
 }
 
 #btn_candidate_report{
-  margin-left: 5px;
-  width: 200px;
+  margin-left: 10px;
+  margin-bottom: 2px; 
+  width: 245px;
   margin-bottom: 2px;
   opacity: 0.6; 
 }
 
 #btn_data{
-  margin-left: 5px;
-  width: 200px;
+  margin-left: 10px;
+  margin-bottom: 2px; 
+  width: 245px;
   margin-bottom: 2px;
   opacity: 0.8; 
 }
@@ -408,11 +441,6 @@ select{
 #btn_submit_entry{
   float: right;
   box-shadow: 3px 3px #d4d4d4;
-}
-
-.btn:hover{
-  opacity: 1;
-  transition-duration: 10s;
 }
 
 /* Data analysis */
@@ -489,9 +517,9 @@ label.question{
   visibility: hidden;
   position: absolute;
   width: 55%;
-  height: 70%;
+  height: 80%;
   left: 30%;
-  top: 25%;
+  top: 10%;
   background: white;
   z-index: 0;
   border: 2px solid rgb(79, 69, 170); 
@@ -554,6 +582,18 @@ input[type=submit]:hover {
   margin-top: 20px;
 }
 
+.col-33 {
+  float: left;
+  width: 33%;
+  margin-top: 20px;
+}
+
+.col-50 {
+  float: left;
+  width: 50%;
+  margin-top: 20px;
+}
+
 .col-75 {
   float: left;
   width: 70%;
@@ -567,6 +607,14 @@ input[type=submit]:hover {
   clear: both;
 }
 
+.new_review{
+  border: 2px solid rgb(79, 69, 170); 
+  margin: 0 auto;
+}
+
+.right_sid{
+  float: left;
+}
 
 
 

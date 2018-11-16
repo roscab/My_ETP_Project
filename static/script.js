@@ -189,3 +189,15 @@ $(document).ready(function(){
         $("#btn_add_candidate").show()
     });
 });
+
+$(document).ready(function(){
+    $("#btn_add_technical_interview").click(function(){  
+        $("#new_technical_interview_window").css("visibility", "visible");
+    });
+});
+
+$(document).ready(function(){
+    $("#btn_add_bul_interview").click(function(){  
+        $("#new_bul_interview_window").css("visibility", "visible");
+    });
+});
