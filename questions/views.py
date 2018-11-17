@@ -4,18 +4,26 @@ from django.http import HttpResponse
 from .models import Question
 from .models import Candidate
 
+from .forms import NewCandidate
+
 # Create your views here.
 
 def home(request):
     return render(request, 'home.html')
 
+def dummy(request):
+    # to be deteted
+    if request.method == 'POST':
+        form = NewCandidate(request.POST)
+        form.save()
+
+    form = NewCandidate()
+    return render(request, 'dummy.html', {'form': form})
+
+
 def candidates(request):
     candidates = Candidate.objects.all()
     return render(request, 'candidates.html', {'candidates': candidates})
-
-def recruiters(request):
-    recruiter = "Veronica M."
-    return render(request, 'candidates.html', {'recruiters': recruiters})
 
 def questions(request):
     questions = Question.objects.all()

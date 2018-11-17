@@ -20,13 +20,16 @@ class Question(models.Model):
 
 class Candidate(models.Model):
     RECRUITER_OPTIONS = [('Guillermo Lopez','Guillermo Lopez'),('Vernonica Mendes','Verónica Mendes'),('Alberto Arjona','Alberto Arjona'),('Luisa Cabrera','Luisa Cabrera'),('Oscar Penon','Oscar Penon'),('Monika Szymanska','Monika Szymanska')]
-    LEVEL_OPTIONS = [('Junior','Junior'),('Junior-Low','Junior-Low'),('Junior-High','Junior-High'),('Profesional','Profesional'),('Profesional-Low','Profesional-Low'),('Profesional-High','Profesional-High'),('Senior','Senior'),('Senior-Low','Senior-Low'),('Senior-High','Senior-High')]
+    LEVEL_OPTIONS = [('Junior','Junior'),('Profesional','Profesional'),('Senior','Senior'),('Principle','Principle')]
     STATUS_OPTIONS = [('Pass recruiter interview','Pass recruiter interview'),('Rejected by recruiter','Rejected by recruiter'),('Pass technical interview','Pass technical interview'),('Rejected by technical interviewer','Rejected by technical interviewer'),('Pass BUL intreview','Pass BUL intreview'),('Rejected by BUL','Rejected by BUL'),('Pass client intreview','Pass client intreview'),('Rejected by client','Rejected by client'),('Rejected pre-offer','Rejected pre-offer'),('Rejected offer','Rejected offer')]
     GROUP_OPTIONS = [('Autosar','Autosar'),('Business analyst','Business analyst'),('C/C++','C/C++'),('DevOps','DevOps'),('Frontend','Frontend'),('iOS','iOS'),('Java','Java'),('.NET','.NET'),('Python','Python'),('QA','QA')]
     FORMAT_OPTIONS = [('new','new'),('old','old')]
-    CONTACT_OPTIONS = [('LinkedIn','LinkedIn'),('Referred','Referred'),('Applied on his own','Applied on his own'),('Phone','Phone'),('No info','No info'),] 
+    CONTACT_OPTIONS = [('Applied on his own','Applied on his own'),('LinkedIn','LinkedIn'),('Referred','Referred'),('Phone','Phone'),('No info','No info'),] 
 
     name = models.CharField(max_length=200)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20)
+    skype = models.CharField(max_length=50,  blank=True)
     recruiter = models.CharField(choices=RECRUITER_OPTIONS, max_length=200)
     contact_date = models.DateField()
     contact_mode = models.CharField(choices=CONTACT_OPTIONS, max_length=200, default="No info")
@@ -38,7 +41,7 @@ class Candidate(models.Model):
     group = models.CharField(choices=GROUP_OPTIONS, max_length=200)
     status = models.CharField(choices=STATUS_OPTIONS, max_length=200)
     technical_feedback = models.CharField( max_length=9999, default="no info")
-    entry_format = models.CharField(choices=FORMAT_OPTIONS, max_length=200, default="old")
+    entry_format = models.CharField(choices=FORMAT_OPTIONS, max_length=200, default="new")
     # next_step = models.CharField(max_length=200)
     # created_at = models.DateTimeField(default=datetime.now, blank=True)
     

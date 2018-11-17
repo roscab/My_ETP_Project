@@ -28,4 +28,5 @@ urlpatterns = [
     url(r'^data/', views.data, name='data_analysis'), # data page
     url(r'^questions/', views.questions, name='questions'), # questions page
     url(r'^report/', views.report, name='report'), # report page
+    url(r'^dummy/', views.dummy, name='dummy'), # report page to be deleted
 ]
