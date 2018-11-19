@@ -211,8 +211,8 @@ td, th {
 
 }
 
-tr:nth-child(even) {
-    background-color: #dddddd;
+tr:nth-child(odd) {
+    background-color: #b7dafc;
 }
 
 .interview_template{
@@ -549,18 +549,10 @@ label.new_entry {
   display: inline-block;
 }
 
-/* input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-} */
-
-label {
+/* label {
   padding: 12px 12px 12px 0;
   display: inline-block;
-}
+} */
 
 input[type=submit] {
   background-color: #4CAF50;

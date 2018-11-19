@@ -23,7 +23,7 @@
                 <th style="background-color: #83c1f3" width="8%" >Group</th>
                 <th style="background-color: #83c1f3" width="7%" >Recruiter</th>
                 <th style="background-color: #83c1f3" width="8%" >Contact date</th>
-                <th style="background-color: #83c1f3" width="10%" >Tech interviewer</th>
+                <th style="background-color: #83c1f3" width="13%" >Tech interviewer</th>
                 <th style="background-color: #83c1f3" width="10%" >Technical Level</th>
                 <th style="background-color: #83c1f3" width="10%" >BUL interviewer</th>
                 <th style="background-color: #83c1f3" width="13%" >Status</th>
@@ -62,99 +62,49 @@
 </div>     
      
         
-        <div class="container_new_candidate" id="new_candidate_window">
-                <form>
-
-                <div class="row">
-                <div class="col-25">
-                    <label class="new_entry" for="lname">Candidate name:</label>
-                </div>
-                <div class="col-75">
-                  <input type="text" name="name" placeholder="John Doe">
-                </div>
-              </div>
-              <div class="row">
-                    <div class="col-25">
-                        <label class="new_entry" for="candidaate_contact_details">Candidate contact details:</label>
-                    </div>
-                    <div class="col-75">
-                      <input type="text"  name="phone_number" placeholder="Phone number: +34 123 456 789">
-                      <input type="text"  name="email" placeholder="Email address: john_doe@gmail.com">
-                      <input type="text"  name="skype_id" placeholder="Skype id: John.Doe.2018">
-                    </div>
-                  </div>
-                  <div class="row">
-                        <div class="col-25">
-                            <label class="new_entry" for="group">Contact mode:</label>
-                        </div>
-                        <div class="col-75">    
-                                <select id="candidate_domain" name="Candidate domain">
-                                    <option disabled selected value> Select a contact mode </option>
-                                    <option value="applied">Applied on his own</option> 
-                                    <option value="linkedin">LinkedIn</option> 
-                                    <option value="phone">Phone</option> 
-                                    <option value="refferal">Refferal</option> 
-                                </select>
-                    </div>
-                </div> 
-              <div class="row">
-                    <div class="col-25">
-                        <label class="new_entry" for="group">Candidate domain:</label>
-                    </div>
-                    <div class="col-75">    
-                            <select id="candidate_domain" name="Candidate domain">
-                                <option disabled selected value> Select a domain </option>
-                                <option value="Veronica">QA</option> 
-                                <option value="Veronica">.Net</option> 
-                                <option value="Veronica">Frontend</option> 
-                                <option value="Veronica">C/C++</option> 
-                            </select>
-                    </div>
-              </div>
-              <div class="row">
-                <div class="col-25">
-                    <label class="new_entry" for="lname">Recruiter name:</label>
-                </div>
-                <div class="col-75">    
-                        <select id="recruiter_name" name="Recruiter name">
-                            <option disabled selected value> Select a recuriter </option>
-                            <option value="Veronica">Veronica</option> 
-                            <option value="Veronica">Albert</option> 
-                            <option value="Veronica">Luisa</option> 
-                            <option value="Veronica">Guillermo</option> 
-                        </select>
-                </div>
-              </div>
-              <div class="row">
-                    <div class="col-25">
-                        <label class="new_entry" for="lname">Contact date</label>
-                    </div>
-                    <div class="col-75">    
-                        <input type="text" id="fname" name="contact_date" placeholder="2018-11-22">
-                    </div>
-                  </div>
-              <div class="row">
-                <div class="col-25">
-                  <label class="new_entry" for="country">Technical validator</label>
-                </div>
-                <div class="col-75">
-                  <select id="technical_interviewer" name="tech_interviewer">
-                    <option value="Eudes">Eudes</option>
-                    <option value="Bogdan">Bogdan</option>
-                    <option value="Daiel">Daniel</option>
-                  </select>
-                </div>
-              </div> 
-              <div class="row">
-                    <div class="col-25">
-                        <button class="btn btn-primary btn" id="btn_cancel_entry">Cancel</button>  
-                    </div>
-                    <div class="col-75">
-                        <input type="submit" value="Submit" id="btn_submit_entry">
-                    </div>    
-                </div>
-            </form>
-        </div>  
-        
-
+<div class="container_new_candidate" id="new_candidate_window">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-25"><label class="new_entry" for="lname">Candidate name:</label></div>
+            <div class="col-75">{{ form.name }}</div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+            <label class="new_entry" for="candidaate_contact_details">Email:</label>
+            <label class="new_entry" for="candidaate_contact_details">Phone number:</label>
+            <label class="new_entry" for="candidaate_contact_details">Skype id:</label>
+        </div>
+            <div class="col-75">
+                {{ form.email }}
+                {{ form.phone }}
+                {{ form.skype }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25"><label class="new_entry">Contact date:</label></div>
+            <div class="col-75">{{ form.contact_date }}</div>
+        </div> 
+        <div class="row">
+            <div class="col-25"><label class="new_entry">Contact mode:</label></div>
+            <div class="col-75">{{ form.contact_mode }}</div>
+        </div> 
+        <div class="row">
+            <div class="col-25"><label class="new_entry" for="group">Candidate domain:</label></div>
+            <div class="col-75">{{ form.group }}</div>
+        </div>
+        <div class="row">
+            <div class="col-25"><label class="new_entry" for="lname">Recruiter name:</label></div>
+            <div class="col-75">{{ form.recruiter }}</div>
+        </div>
+        <div class="row">
+            <div class="col-25"><label class="new_entry" for="country">Technical validator</label></div>
+            <div class="col-75">{{ form.technical_interviewer }}</div>
+        </div>    
+        <div class="row">
+            <div class="col-25"><button class="btn btn-primary btn" id="btn_cancel_entry">Cancel</button> </div>
+            <div class="col-75"><input type="submit" id="btn_submit_entry"></div>    
+        </div>
+    </form>
+</div>  
 {% endblock %}

@@ -38,14 +38,12 @@
     </table>
 </div>  
 
-
-
 <div class="container_new_candidate" id="new_technical_interview_window">
     <form>
         <div class="col-25">
             <img class="profile_icon" src="{% static 'images/profile.bmp' %}" style="margin: 10px">
-            <label class="new_entry" for="lname">{candidate.name }</label>
-            <label class="new_entry" for="group">{candidate.domain }</label>
+            <label class="new_entry" for="lname">{{ candidate.name }}</label>
+            <label class="new_entry" for="group">{{ candidate.domain }}</label>
             <button class="btn btn-primary btn" id="btn_cancel_entry">Cancel</button>
         </div>
         <div class="col-75">
@@ -70,7 +68,7 @@
             <div class="col-33">    
                 <input type="text" id="fname" name="contact_date" placeholder="2018-11-22">
             </div>
-                <input type="submit" value="Submit" id="btn_submit_entry">
+            <input type="submit" value="Submit" id="btn_submit_entry" style="margin-top:40px">
             </div>
         </form>
     </div> 
@@ -106,7 +104,7 @@
                 <div class="col-33">    
                     <input type="text" id="fname" name="contact_date" placeholder="2018-11-22">
                 </div>
-                <input type="submit" value="Submit" id="btn_submit_entry">
+                <input type="submit" value="Submit" id="btn_submit_entry" style="margin-top:10px">
             </div>
         </form>
     </div>  

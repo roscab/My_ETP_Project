@@ -11,19 +11,15 @@ from .forms import NewCandidate
 def home(request):
     return render(request, 'home.html')
 
-def dummy(request):
-    # to be deteted
+def candidates(request):
     if request.method == 'POST':
         form = NewCandidate(request.POST)
         form.save()
 
     form = NewCandidate()
-    return render(request, 'dummy.html', {'form': form})
-
-
-def candidates(request):
     candidates = Candidate.objects.all()
-    return render(request, 'candidates.html', {'candidates': candidates})
+
+    return render(request, 'candidates.html', {'candidates': candidates,'form': form})
 
 def questions(request):
     questions = Question.objects.all()
