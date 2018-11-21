@@ -433,14 +433,50 @@ select{
   background-color:rgb(175, 68, 68);
   width: 90px;  
   height: 48px;
-  margin-left: 50px;
+  margin-left: 48px;
   border: none;
   box-shadow: 3px 3px #d4d4d4;
+  margin-top: 30px;
 }
 
 #btn_submit_entry{
   float: right;
   box-shadow: 3px 3px #d4d4d4;
+  margin-top: 30px;
+}
+
+#btn_cancel_technical_feedback{
+  background-color:rgb(175, 68, 68);
+  width: 90px;  
+  height: 48px;
+  margin-left: 32px;
+  border: none;
+  box-shadow: 3px 3px #d4d4d4;
+  margin-top: 20px;
+}
+
+#btn_submit_technical_feedback{
+  float: right;
+  margin-right: 32px;
+  box-shadow: 3px 3px #d4d4d4;
+  margin-top: 20px;
+}
+
+#btn_cancel_bul_feedback{
+  background-color:rgb(175, 68, 68);
+  width: 90px;  
+  height: 48px;
+  margin-left: 32px;
+  border: none;
+  box-shadow: 3px 3px #d4d4d4;
+  margin-top: 20px;
+}
+
+#btn_submit_bul_feedback{
+  float: right;
+  margin-right: 32px;
+  box-shadow: 3px 3px #d4d4d4;
+  margin-top: 20px;
 }
 
 /* Data analysis */
@@ -517,9 +553,39 @@ label.question{
   visibility: hidden;
   position: absolute;
   width: 55%;
-  height: 80%;
+  height: 75%;
   left: 30%;
   top: 10%;
+  background: white;
+  z-index: 0;
+  border: 2px solid rgb(79, 69, 170); 
+  border-radius: 20px; 
+}
+
+#container_new_technical_report{
+  display: block;
+  visibility: hidden;
+  position: absolute;
+  padding-top: 28px;
+  width: 55%;
+  height: 70%;
+  left: 30%;
+  top: 15%;
+  background: white;
+  z-index: 0;
+  border: 2px solid rgb(79, 69, 170); 
+  border-radius: 20px; 
+}
+
+#container_new_bul_report{
+  display: block;
+  visibility: hidden;
+  position: absolute;
+  padding-top: 28px;
+  width: 55%;
+  height: 70%;
+  left: 30%;
+  top: 15%;
   background: white;
   z-index: 0;
   border: 2px solid rgb(79, 69, 170); 
@@ -608,6 +674,8 @@ input[type=submit]:hover {
   float: left;
 }
 
-
+#tech_interview_select_filed{
+  padding: 10px 0px 10px 0px;
+}
 
 

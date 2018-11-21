@@ -190,14 +190,32 @@ $(document).ready(function(){
     });
 });
 
+
+// check if the tow can be merged 
+
 $(document).ready(function(){
-    $("#btn_add_technical_interview").click(function(){  
-        $("#new_technical_interview_window").css("visibility", "visible");
+    $("#btn_cancel_technical_feedback").click(function(){  
+        $("#container_new_technical_report").css("visibility", "hidden");
+        location.reload();
     });
 });
 
 $(document).ready(function(){
-    $("#btn_add_bul_interview").click(function(){  
-        $("#new_bul_interview_window").css("visibility", "visible");
+    $("#btn_cancel_bul_feedback").click(function(){  
+        $("#container_new_bul_report").css("visibility", "hidden");
+        location.reload();
     });
 });
+
+function addTehcnicalReport() {
+    $("#container_new_technical_report").css("visibility", "visible");
+    var entry_id = event.target.id
+    $('#entry_id_field_tech').attr('value',entry_id);
+}
+
+function addBulReport() {
+    $("#container_new_bul_report").css("visibility", "visible");
+    var entry_id = event.target.id
+    $('#entry_id_field_bul').attr('value',entry_id);
+}
+    

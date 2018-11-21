@@ -27,6 +27,8 @@ class Candidate(models.Model):
     FORMAT_OPTIONS = [('new','new'),('old','old')]
     CONTACT_OPTIONS = [('Applied on his own','Applied on his own'),('LinkedIn','LinkedIn'),('Referred','Referred'),('Phone','Phone'),('No info','No info')] 
     TECHNICAL_VALIDATOR_OPTIONS = [('Bogdan Rosca','Bogdan Rosca'),('Eudes Costa','Eudes Costa'),('Daniel DeAmorim','Daniel DeAmorim')] 
+    BUL_VALIDATOR_OPTIONS = [('Ana Diez','Ana Diez'),('Daniel DeAmorim','Daniel DeAmorim'),('Ramon Arque','Ramon Arque')] 
+    BUL_VERDIC = [('Accepted','Accepted'),('Pending','Pendig'),('Rejected','Rejected')]
 
     name =  models.CharField(max_length=100)
     email = models.CharField(max_length=200)
@@ -37,12 +39,14 @@ class Candidate(models.Model):
     contact_mode = models.CharField(choices=CONTACT_OPTIONS, max_length=200)
     technical_interview_date = models.DateField(default="2000-01-01")
     technical_interviewer = models.CharField(choices=TECHNICAL_VALIDATOR_OPTIONS, max_length=200)
+    technical_feedback = models.CharField( max_length=9999, default="no info")
     technical_level = models.CharField(choices=LEVEL_OPTIONS,default='none', max_length=200, blank=True)
     bul_interview_date = models.DateField(default="2000-01-01")
-    bul_interviewer = models.CharField(max_length=200, blank=True)
+    bul_interviewer = models.CharField(choices=BUL_VALIDATOR_OPTIONS, max_length=200, blank=True)
+    bul_feedback = models.CharField( max_length=9999, default="no info")
+    bul_verdic = models.CharField(choices=BUL_VERDIC, max_length=200, default="Pending")
     group = models.CharField(choices=GROUP_OPTIONS, max_length=200)
     status = models.CharField(choices=STATUS_OPTIONS, max_length=200, default="Pass recruiter interview")
-    technical_feedback = models.CharField( max_length=9999, default="no info")
     entry_format = models.CharField(choices=FORMAT_OPTIONS, max_length=200, default="new")
     
     def __str__(self):

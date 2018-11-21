@@ -2,6 +2,8 @@
 
 {% load static %}
 
+{% load widget_tweaks %}
+
 {% block content %}      
 <div class="main_content">   
     <table class="candidates">    
@@ -27,10 +29,10 @@
                 <td>{{ candidate.bul_interviewer }}</td>
                 {% if candidate.status == 'Pass recruiter interview' %}
                 <td class="status" style="font-weight: bold">Technical interview pending</td>
-                <td><button class="btn btn-primary btn" id="btn_add_technical_interview" >Write technical report</button> </td>
+                <td><button class="btn btn-primary btn"  id="{{ candidate.id }}" onclick="addTehcnicalReport()" >Write technical report</button> </td>
                 {% else %}
                 <td class="status" style="font-weight: bold">BUL interview pending</td>
-                <td><button class="btn btn-primary btn" id="btn_add_bul_interview" >Write BUL report</button></td> 
+                <td><button class="btn btn-primary btn" id="{{ candidate.id }}" onclick="addBulReport()">Write BUL report</button></td> 
                 {% endif %} 
             </tr>    
             {% endif %} 
@@ -38,75 +40,71 @@
     </table>
 </div>  
 
-<div class="container_new_candidate" id="new_technical_interview_window">
-    <form>
-        <div class="col-25">
-            <img class="profile_icon" src="{% static 'images/profile.bmp' %}" style="margin: 10px">
-            <label class="new_entry" for="lname">{{ candidate.name }}</label>
-            <label class="new_entry" for="group">{{ candidate.domain }}</label>
-            <button class="btn btn-primary btn" id="btn_cancel_entry">Cancel</button>
+<div class="container_new_technical_report" id="container_new_technical_report">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="row justify-content-md-center">
+            <div class="col-lg-3">
+                <img class="profile_icon" src="{% static 'images/profile.bmp' %}" style="margin: auto">
+                <label class="new_entry" for="lname"> Thecnical report: Add name here{{ candidates.name }}</label>
+            </div>
+            <div class="col-lg-8">
+                <div class="row">
+                    {{ form.technical_feedback | attr:"style: height: 450px; word-wrap: break-word;"}}
+                </div>
+                <div class="row">
+                    <div class="col-lg-4" id="tech_interview_select_filed">  
+                        {{ form.technical_interviewer }}
+                    </div>
+                    <div class="col-lg-4" id="tech_interview_select_filed">  
+                        {{ form.technical_level }}
+                    </div>
+                    <div class="col-lg-4" id="tech_interview_select_filed">  
+                        {{ form.technical_interview_date }}
+                    </div> 
+                </div>
+            </div>        
+        </div>    
+        <div class="row">
+            <div class="col-lg-6"> <button class="btn btn-primary btn" id="btn_cancel_technical_feedback">Cancel</button></div> 
+            <div class="col-lg-6"><input type="submit" value="Submit" id="btn_submit_technical_feedback"></div>  
         </div>
-        <div class="col-75">
-            <textarea type="text" name="feedback" placeholder="Enter feedback here" style="height: 450px"></textarea>
-            <div class="col-33">
-                <select id="technical_interviewer" name="tech_interviewer">
-                    <option disabled selected value> Technical validator name</option>
-                    <option value="Eudes">Eudes Costa</option>
-                    <option value="Bogdan">Bogdan Rosca</option>
-                    <option value="Daiel">Daniel Deamorim</option>
-                </select>
-            </div>
-            <div class="col-33">
-                <select id="candidate_level" name="candidate_level">
-                    <option disabled selected value> Select candidate level </option>
-                    <option value="Junior">Junior</option>
-                    <option value="Professional">Professional</option>
-                    <option value="Senior">Senior</option>
-                    <option value="Principale">Principale</option>
-                </select>
-            </div>
-            <div class="col-33">    
-                <input type="text" id="fname" name="contact_date" placeholder="2018-11-22">
-            </div>
-            <input type="submit" value="Submit" id="btn_submit_entry" style="margin-top:40px">
-            </div>
-        </form>
-    </div> 
-    
+        <input type='text' id='entry_id_field_tech' name='entry_id' value=1 style="visibility: hidden">
+    </form> 
+</div>    
 
-    
-    <div class="container_new_candidate" id="new_bul_interview_window">
-        <form>
-            <div class="col-25">
-                <img class="profile_icon" src="{% static 'images/profile.bmp' %}" style="margin: 10px">
-                <label class="new_entry" for="lname">{candidate.name }</label>
-                <label class="new_entry" for="group">{candidate.domain }</label>
-                <button class="btn btn-primary btn" id="btn_cancel_entry">Cancel</button>
+<div class="container_new_bul_report" id="container_new_bul_report">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="row justify-content-md-center">
+            <div class="col-lg-3">
+                <img class="profile_icon" src="{% static 'images/profile.bmp' %}" style="margin: auto">
+                <label class="new_entry" for="lname"> BULreport: Add name here{{ candidates.name }}</label>
             </div>
+            <div class="col-lg-8">
+                <div class="row">
+                    {{ form.bul_feedback | attr:"style: height: 450px; word-wrap: break-word;"}}
+                </div>
+                <div class="row">
+                    <div class="col-lg-4" id="tech_interview_select_filed">  
+                        {{ form.bul_interviewer }}
+                    </div>
+                    <div class="col-lg-4" id="tech_interview_select_filed">  
+                        {{ form.bul_verdic }}
+                    </div>
+                    <div class="col-lg-4" id="tech_interview_select_filed">  
+                        {{ form.bul_interview_date }}
+                    </div> 
+                </div>
+            </div>        
+        </div>    
+        <div class="row">
+            <div class="col-lg-6"> <button class="btn btn-primary btn" id="btn_cancel_bul_feedback">Cancel</button></div> 
+            <div class="col-lg-6"><input type="submit" value="Submit" id="btn_submit_bul_feedback"></div>  
+        </div>
+        <input type='text' id='entry_id_field_bul' name='entry_id' value=1 style="visibility: hidden">
+    </form> 
+</div>     
 
-            <div class="col-75">
-                    <textarea type="text" name="feedback" placeholder="Enter feedback here" style="height: 450px"></textarea>
-                <div class="col-33">
-                    <select id="technical_interviewer" name="tech_interviewer">
-                        <option disabled selected value> BUL name </option>
-                        <option value="Eudes">Ana Diez</option>
-                        <option value="Bogdan">Ramon</option>
-                        <option value="Daiel">Daniel</option>
-                    </select>
-                </div>
-                <div class="col-33">
-                        <select id="candidate_level" name="candidate_level">
-                            <option disabled selected value> Select outcome </option>
-                            <option value="Accepted">Accepted</option>
-                            <option value="Rejected">Rejected</option>
-                        </select>
-                </div>
-                <div class="col-33">    
-                    <input type="text" id="fname" name="contact_date" placeholder="2018-11-22">
-                </div>
-                <input type="submit" value="Submit" id="btn_submit_entry" style="margin-top:10px">
-            </div>
-        </form>
-    </div>  
 {% endblock %}
 

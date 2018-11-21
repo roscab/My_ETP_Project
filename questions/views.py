@@ -5,6 +5,7 @@ from .models import Question
 from .models import Candidate
 
 from .forms import NewCandidate
+from .forms import NewReport
 
 # Create your views here.
 
@@ -14,11 +15,11 @@ def home(request):
 def candidates(request):
     if request.method == 'POST':
         form = NewCandidate(request.POST)
-        form.save()
+        if form.is_valid():
+            form.save()
 
     form = NewCandidate()
     candidates = Candidate.objects.all()
-
     return render(request, 'candidates.html', {'candidates': candidates,'form': form})
 
 def questions(request):
@@ -26,8 +27,23 @@ def questions(request):
     return render(request, 'questions.html', {'questions': questions})
 
 def report(request):
+
+    if request.method == 'POST':
+        entry_id = request.POST['entry_id']  # returns the entry id from database  
+        instance = Candidate.objects.get(id=entry_id)
+        # if (instance.status == 'Pass recruiter interview'):
+        #     instance.status = 'Pass technical interview'
+        # else:
+        #     instance.status = 'Pass BUL interview'
+        # instance.save()
+
+        form = NewReport(request.POST or None, instance=instance)
+        # if form.is_valid():
+        form.save()    
+
+    form = NewReport()
     candidates = Candidate.objects.all()
-    return render(request, 'report.html', {'candidates': candidates})    
+    return render(request, 'report.html', {'candidates': candidates,'form': form})
 
 def data(request):
     data = {
