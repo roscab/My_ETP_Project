@@ -16,15 +16,25 @@ class NewCandidate(forms.ModelForm):
         self.fields['contact_date'].widget.attrs['placeholder'] = '2018-10-30'
 
     
-class NewReport(forms.ModelForm):
+class NewTechReport(forms.ModelForm):
+
+    class Meta:
+        model = Candidate  
+        widgets = {'technical_feedback': forms.Textarea,}
+        fields = ('technical_interviewer','technical_level','technical_interview_date','technical_feedback')
+
+    def __init__(self, *args, **kwargs):
+        super(NewTechReport, self).__init__(*args, **kwargs)
+        self.fields['technical_interview_date'].widget.attrs['placeholder'] = '2018-10-30'
+        self.fields['technical_feedback'].widget.attrs['placeholder'] = 'Write your fedback here'
+
+class NewBulReport(forms.ModelForm):
 
     class Meta:
         model = Candidate  
         widgets = {'technical_feedback': forms.Textarea, 'bul_feedback': forms.Textarea, }
         fields = ('bul_interviewer','bul_interview_date','bul_verdic','bul_feedback')
-        #'technical_interviewer','technical_level','technical_interview_date','technical_feedback',
     def __init__(self, *args, **kwargs):
-        super(NewReport, self).__init__(*args, **kwargs)
-        # self.fields['technical_interview_date'].widget.attrs['placeholder'] = '2018-10-30'
-        # self.fields['technical_feedback'].widget.attrs['placeholder'] = 'Write your fedback here'
-        # self.fields['bul_feedback'].widget.attrs['placeholder'] = 'Write your fedback here'
+        super(NewBulReport, self).__init__(*args, **kwargs)
+        self.fields['bul_interview_date'].widget.attrs['placeholder'] = '2018-10-30'
+        self.fields['bul_feedback'].widget.attrs['placeholder'] = 'Write your fedback here'

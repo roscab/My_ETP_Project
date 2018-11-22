@@ -50,17 +50,17 @@
             </div>
             <div class="col-lg-8">
                 <div class="row">
-                    {{ form.technical_feedback | attr:"style: height: 450px; word-wrap: break-word;"}}
+                    {{ form_tech.technical_feedback | attr:"style: height: 450px; word-wrap: break-word;"}}
                 </div>
                 <div class="row">
                     <div class="col-lg-4" id="tech_interview_select_filed">  
-                        {{ form.technical_interviewer }}
+                        {{ form_tech.technical_interviewer }}
                     </div>
                     <div class="col-lg-4" id="tech_interview_select_filed">  
-                        {{ form.technical_level }}
+                        {{ form_tech.technical_level }}
                     </div>
                     <div class="col-lg-4" id="tech_interview_select_filed">  
-                        {{ form.technical_interview_date }}
+                        {{ form_tech.technical_interview_date }}
                     </div> 
                 </div>
             </div>        
@@ -83,17 +83,17 @@
             </div>
             <div class="col-lg-8">
                 <div class="row">
-                    {{ form.bul_feedback | attr:"style: height: 450px; word-wrap: break-word;"}}
+                    {{ form_bul.bul_feedback | attr:"style: height: 450px; word-wrap: break-word;"}}
                 </div>
                 <div class="row">
                     <div class="col-lg-4" id="tech_interview_select_filed">  
-                        {{ form.bul_interviewer }}
+                        {{ form_bul.bul_interviewer }}
                     </div>
                     <div class="col-lg-4" id="tech_interview_select_filed">  
-                        {{ form.bul_verdic }}
+                        {{ form_bul.bul_verdic }}
                     </div>
                     <div class="col-lg-4" id="tech_interview_select_filed">  
-                        {{ form.bul_interview_date }}
+                        {{ form_bul.bul_interview_date }}
                     </div> 
                 </div>
             </div>        
@@ -104,7 +104,7 @@
         </div>
         <input type='text' id='entry_id_field_bul' name='entry_id' value=1 style="visibility: hidden">
     </form> 
-</div>     
+</div>      
 
 {% endblock %}
 

@@ -5,7 +5,8 @@ from .models import Question
 from .models import Candidate
 
 from .forms import NewCandidate
-from .forms import NewReport
+from .forms import NewTechReport
+from .forms import NewBulReport
 
 # Create your views here.
 
@@ -31,19 +32,26 @@ def report(request):
     if request.method == 'POST':
         entry_id = request.POST['entry_id']  # returns the entry id from database  
         instance = Candidate.objects.get(id=entry_id)
-        # if (instance.status == 'Pass recruiter interview'):
-        #     instance.status = 'Pass technical interview'
-        # else:
-        #     instance.status = 'Pass BUL interview'
-        # instance.save()
 
-        form = NewReport(request.POST or None, instance=instance)
-        # if form.is_valid():
-        form.save()    
+        if (instance.status == 'Pass recruiter interview'):
+            form_tech = NewTechReport(request.POST or None, instance=instance)
+            if form_tech.is_valid():
+                form_tech.save() 
+        else:
+            form_bul = NewBulReport(request.POST or None, instance=instance)
+            if form_bul.is_valid():
+                form_bul.save()      
 
-    form = NewReport()
+        if (instance.status == 'Pass recruiter interview'):
+            instance.status = 'Pass technical interview'
+        else:
+            instance.status = 'Pass BUL interview'
+        instance.save()            
+
+    form_tech = NewTechReport()
+    form_bul = NewBulReport()
     candidates = Candidate.objects.all()
-    return render(request, 'report.html', {'candidates': candidates,'form': form})
+    return render(request, 'report.html', {'candidates': candidates,'form_tech': form_tech,'form_bul': form_bul })
 
 def data(request):
     data = {
