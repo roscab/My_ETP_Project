@@ -9,41 +9,16 @@ $( document ).ready(function() {
      
     $(".status").each(function( index ) {
         var status = $(this).text();
-
-        switch ($.trim(status)) { 
-            case 'In process': 
-                $(this).css("color", "#F3A712");  
-                break;
-            case 'Pass all process': 
-                $(this).css("color", "#46A667");         
-                break;
-            case 'Stand by': 
-                $(this).css("color", "#2CED1A"); 
-                break;
-            case 'Rejected technical interview': 
-                $(this).css("color", "#D62828");  
-                break;    
-            case 'Rejected by recruiter':
-                $(this).css("color", "#640D14");  
-                break;  
-            case 'Rejected by BUL': 
-                $(this).css("color", "#960200");  
-                break;  
-            case 'Rejected by BUL/Client': 
-                $(this).css("color", "#960200");  
-                break;   
-            case 'Rejected by client': 
-                $(this).css("color", "#960200");  
-                break;        
-            case 'Rejected pre-offer': 
-                $(this).css("color", "#4392F1");  
-                break;        
-            case 'Rejected offer': 
-                $(this).css("color", "#0E427A");  
-                break;                  
-            default:
-                $(this).css("color", "Black");  
-        }
+        if (status.includes("Pass"))
+            $(this).css("color", "#055B14")  
+        else
+            if (status.includes("Rejected by"))
+                $(this).css("color", "#5B0505")    
+            else    
+                if (status.includes("pending"))
+                    $(this).css("color", "#E39728")    
+                else           
+                    $(this).css("color", "#05125B") // this color is set for candidates that reject the offer                
      });  
 });
 

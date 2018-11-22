@@ -29,7 +29,7 @@
                 <th style="background-color: #83c1f3" width="13%" >Status</th>
             </tr>
                     
-            {% for candidate in candidates %}  
+            {% for candidate in candidates reversed %}  
                 <tr class="candidate_entry" id="{{ candidate.id }}" tag="{{ candidate.group }}">
                     <td><b>{{ candidate.name }}</b></td>
                     <td>{{ candidate.group }}</td>

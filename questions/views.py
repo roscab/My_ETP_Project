@@ -36,18 +36,17 @@ def report(request):
         if (instance.status == 'Pass recruiter interview'):
             form_tech = NewTechReport(request.POST or None, instance=instance)
             if form_tech.is_valid():
+                instance.status = 'Pass technical interview'
                 form_tech.save() 
         else:
             form_bul = NewBulReport(request.POST or None, instance=instance)
             if form_bul.is_valid():
+                if form_bul.instance.bul_verdic == 'Accepted':
+                    instance.status = 'Pass BUL interview'  
+                else:
+                    instance.status = 'Rejected by BUL'      
                 form_bul.save()      
-
-        if (instance.status == 'Pass recruiter interview'):
-            instance.status = 'Pass technical interview'
-        else:
-            instance.status = 'Pass BUL interview'
-        instance.save()            
-
+        
     form_tech = NewTechReport()
     form_bul = NewBulReport()
     candidates = Candidate.objects.all()

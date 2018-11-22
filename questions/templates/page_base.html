@@ -18,28 +18,26 @@
     <script src="{% static 'script.js' %}"></script>
 
     
-    <title>Bootstrap</title>
+    <title>ERNI Recruting Plarform</title>
     </head>
 
     <body>
-        <div>
-            <div class="sidebar">
+        <div class="row justify-content-md-center">
+            <div class="col-lg-2 sidebar" style="margin-left: -30px">
                     <nav id="sidebar">
                         <div class="sidebar-header">
-                            <img class="logo"  src="{% static 'images/logo.png' %}" width="240px">
-                            <p style="color: #4E598C; margin-left: 150px;">#betterjoinerni</p>
+                            <img class="logo"  src="{% static 'images/logo.png' %}" width="240px" style="margin: auto">
+                            <p style="color: #4E598C; margin-left: 120px">#betterjoinerni</p>
                         </div>
-                        <ul class="list-unstyled components">
-                                    <a href="/" class="btn btn-primary btn-lg" id="btn_home" style="display: inline-block;">Home</a>
-                                    <div class="meniu_buttons">
-                                            <a href="/candidates" class="btn btn-info btn-lg" id="btn_candidates" style="display: inline-block;">Candidate status</a>
-                                            <a href="/data" class="btn btn-primary btn-lg" id="btn_data"style="display: inline-block;" >Data analysis</a>
-                                            <a href="/questions" class="btn btn-info btn-lg" id="btn_interview" style="display: inline-block;">Interview questions</a>
-                                            <a href="/report" class="btn btn-primary btn-lg" id="btn_candidate_report" style="display: inline-block;">Interview report</a>
-                                   </div>
+                        <ul class="list-unstyled components" style="margin-left: 20px">
+                            <a href="/" class="btn btn-primary btn-lg" id="btn_home">Home</a>
+                            <a href="/candidates" class="btn btn-info btn-lg" id="btn_candidates">Candidate status</a>
+                            <a href="/data" class="btn btn-primary btn-lg" id="btn_data"  >Data analysis</a>
+                            <a href="/questions" class="btn btn-info btn-lg" id="btn_interview" >Interview questions</a>
+                            <a href="/report" class="btn btn-primary btn-lg" id="btn_candidate_report">Interview report</a>
                         </ul>
                     </nav>
-                    <div>
+                    <div style="margin-left: 20px; margin-top: 100px">
                         <div class="about_contact"><a href="#">About</a></div> 
                         <div class="about_contact"><a href="/admin">Admin</a></div> 
                         <div class="about_contact"><a href="#">Contact</a></div>
@@ -50,11 +48,13 @@
                         </div>
                     </div>
             </div>
+            <div class="col-lg-10">
                 <div class = "header">
                         <img class="city_header"  src="{% static 'images/header.png' %}">
                 </div>    
                     {% block content %}
-                    {% endblock %}  
-        </div>  
+                    {% endblock %}   
+            </div>     
+        </div>            
     </body>   
 </html>        
