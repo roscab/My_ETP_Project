@@ -234,7 +234,7 @@ tr:nth-child(odd) {
 .questions_chategory{
   margin-top: 10px;
   display: block;
-  padding-left: 30%;
+  padding-left: 15%;
   width: 95%;
 }
 
@@ -268,6 +268,34 @@ select{
   margin-top: 4px;
   margin-right: 8px;
   visibility: hidden;
+}
+
+.bul_feedback_icon
+{
+  cursor: pointer;
+  width: 20px; 
+  float: right;
+  margin-top: 3px;
+  visibility: hidden;
+}
+
+.bul_feedback_date_icon
+{
+  cursor: pointer;
+  width: 17px; 
+  float: right;
+  margin-top: 4px;
+  margin-right: 8px;
+  visibility: hidden;
+}
+
+.contact_icon
+{
+  cursor: pointer;
+  width: 20px; 
+  float: right;
+  margin-top: 3px;
+  visibility: hidden; 
 }
 
 .popup {
@@ -310,61 +338,9 @@ select{
   padding-right: 40px;
 }
 
-.popup_feedback:after {
-  content: "";
-  width: 16px;
-  height: 16px;
-  transform: rotate(-45deg);
-  background: #3993DD;
-  position: absolute;
-  z-index: -1;
-  top: -8px;
-  left: 54px;
-}
-
-.popup_feedback_date:after {
-  content: "";
-  width: 16px;
-  height: 16px;
-  transform: rotate(-45deg);
-  background: #3993DD;
-  position: absolute;
-  z-index: -1;
-  top: -8px;
-  left: 21px;
-}
-
-.close_popup{
-  cursor: pointer;
-  position: absolute;
-  display: block;
-  top: 10px;
-  right: 20px;
-}
-
-.close_popup_date{
-  cursor: pointer;
-  position: absolute;
-  display: block;
-  top: 10px;
-  right: 20px;
-}
-
-@-webkit-keyframes fadeIn {
-    from {opacity: 0;} 
-    to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
-}
-
-/* Toggle this class - hide and show the popup */
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
+.popover{
+  max-width: 30%;
+  /* background-color: rgb(166, 210, 247); */
 }
 
 /* Buttons */

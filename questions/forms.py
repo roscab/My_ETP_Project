@@ -26,7 +26,7 @@ class NewTechReport(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(NewTechReport, self).__init__(*args, **kwargs)
         self.fields['technical_interview_date'].widget.attrs['placeholder'] = '2018-10-30'
-        self.fields['technical_feedback'].widget.attrs['placeholder'] = 'Write your fedback here'
+        self.fields['technical_feedback'].widget.attrs['placeholder'] = 'Write your feedback here'
 
 class NewBulReport(forms.ModelForm):
 
@@ -37,4 +37,4 @@ class NewBulReport(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(NewBulReport, self).__init__(*args, **kwargs)
         self.fields['bul_interview_date'].widget.attrs['placeholder'] = '2018-10-30'
-        self.fields['bul_feedback'].widget.attrs['placeholder'] = 'Write your fedback here'
+        self.fields['bul_feedback'].widget.attrs['placeholder'] = 'Write your feedback here'

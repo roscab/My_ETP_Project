@@ -21,7 +21,9 @@
         {% for candidate in candidates %}  
             {% if candidate.status == 'Pass recruiter interview' or candidate.status == 'Pass technical interview' %}
             <tr class="candidate_entry" id="{{ candidate.id }}" tag="{{ candidate.group }}">
-                <td><b>{{ candidate.name }}</b></td>
+                <td><b>{{ candidate.name }}</b>
+                    <img type="button" class="contact_icon" data-toggle="popover" data-placement="bottom" src="{% static 'images/contact-icon.png' %}" data-content="Phone: {{ candidate.phone }} <br /> E-mail: {{ candidate.email }} <br /> Skype: {{ candidate.skype }}"  data-html="true" title="Contact information">
+                </td>
                 <td>{{ candidate.group }}</td>
                 <td>{{ candidate.recruiter }}</td>
                 <td>{{ candidate.contact_date }}</td>  

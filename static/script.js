@@ -3,10 +3,7 @@ var isSelected = {};
 
 // on page load execute below instructions
 $( document ).ready(function() {
-    
-    $("#icon_462").css("visibility", "visible");
-    $("#date_462").css("visibility", "visible");
-     
+         
     $(".status").each(function( index ) {
         var status = $(this).text();
         if (status.includes("Pass"))
@@ -19,7 +16,43 @@ $( document ).ready(function() {
                     $(this).css("color", "#E39728")    
                 else           
                     $(this).css("color", "#05125B") // this color is set for candidates that reject the offer                
-     });  
+    });  
+
+    // shows the technical feedback icon for entrys that don`t have it
+    $(".tech_feedback_icon").each(function( index ) {
+        var feedback = $(this).attr("data-content");
+        if (!feedback.includes("no info") && !feedback.includes("Pending"))
+            $(this).css("visibility", "visible");
+    });    
+    
+    // shows the technical date icon for entrys that don`t have it or have it as default
+    $(".tech_feedback_date_icon").each(function( index ) {
+        var date = $(this).attr("data-content");
+        if (!date.includes("None") && date!="Jan. 1, 2000")  
+            $(this).css("visibility", "visible");
+    }); 
+    
+    // shows the bul feedback icon for entrys that don`t have it
+    $(".bul_feedback_icon").each(function( index ) {
+        var feedback = $(this).attr("data-content");
+        if (!feedback.includes("no info") && !feedback.includes("Pending"))
+            $(this).css("visibility", "visible");
+    });    
+    
+    // shows the bul date icon for entrys that don`t have it or have it as default
+    $(".bul_feedback_date_icon").each(function( index ) {
+        var date = $(this).attr("data-content");
+        if (!date.includes("None") && date!="Jan. 1, 2000")  
+            $(this).css("visibility", "visible");
+    });   
+    
+    
+    // shows the contact icon for entrys that don`t have it or have it as default
+    $(".contact_icon").each(function( index ) {
+    var date = $(this).attr("data-content");
+    if (!date.includes("not available"))  
+        $(this).css("visibility", "visible");
+    });  
 });
 
 
@@ -124,34 +157,6 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-    $(".tech_feedback_icon").click(function(){    
-        var popup = document.getElementById("popup_feedback_462");
-        popup.classList.toggle("show");
-    });
-});
-
-$(document).ready(function(){
-    $(".tech_feedback_date_icon").click(function(){    
-        var popup = document.getElementById("popup_feedback_date_462");
-        popup.classList.toggle("show");
-    });
-});
-
-$(document).ready(function(){
-    $(".close_popup").click(function(){    
-        var popup = document.getElementById("popup_feedback_462");
-        popup.classList.toggle("show");
-    });
-});
-
-$(document).ready(function(){
-    $(".close_popup_date").click(function(){    
-        var popup = document.getElementById("popup_feedback_date_462");
-        popup.classList.toggle("show");
-    });
-});
-
-$(document).ready(function(){
     $("#btn_add_candidate").click(function(){  
         $("#btn_add_candidate").hide()
         $("#new_candidate_window").css("visibility", "visible");
@@ -175,13 +180,6 @@ $(document).ready(function(){
     });
 });
 
-$(document).ready(function(){
-    $("#btn_cancel_bul_feedback").click(function(){  
-        $("#container_new_bul_report").css("visibility", "hidden");
-        location.reload();
-    });
-});
-
 function addTehcnicalReport() {
     $("#container_new_technical_report").css("visibility", "visible");
     var entry_id = event.target.id
@@ -193,4 +191,14 @@ function addBulReport() {
     var entry_id = event.target.id
     $('#entry_id_field_bul').attr('value',entry_id);
 }
-    
+
+$(document).ready(function(){
+    $("#btn_cancel_bul_feedback").click(function(){  
+        $("#container_new_bul_report").css("visibility", "hidden");
+        location.reload();
+    });
+});
+
+$(function () {
+    $('[data-toggle="popover"]').popover()
+})
