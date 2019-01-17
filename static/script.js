@@ -55,7 +55,7 @@ $( document ).ready(function() {
     });  
 });
 
-
+// Show questions based on chategory
 $(document).ready(function(){
     $(".btn").click(function(){    
             var questionType = $(this).attr("tag");
@@ -70,6 +70,7 @@ $(document).ready(function(){
     });
 });
 
+// Show all questions
 $(document).ready(function(){
     $("#btn_all").click(function(){            
             $(".question").each(function( index ) {
@@ -78,6 +79,7 @@ $(document).ready(function(){
     });
 });
 
+// Show selected questions
 $(document).ready(function(){
     $("#btn_selected").click(function(){            
             $(".question").each(function( index ) {
@@ -89,6 +91,7 @@ $(document).ready(function(){
     });
 });
 
+// Change to report page
 $(document).ready(function(){
     $("#btn_report").click(function(){
         $(".question").each(function( index ) {
@@ -121,6 +124,7 @@ $(document).ready(function(){
     });
 });
 
+// Open printer options
 $(document).ready(function(){          
     $("#btn_print").click(function(){      
         $(".candidate").show();     
@@ -137,7 +141,6 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $(".btn").click(function(){    
-        console.log($(this).attr("id"));
         if($(this).attr("id") != 'btn_add_candidate' && $(this).attr("id") != 'btn_cancel_entry'){
 
             var candidateType = $(this).attr("tag");
@@ -169,7 +172,6 @@ $(document).ready(function(){
         $("#btn_add_candidate").show()
     });
 });
-
 
 // check if the tow can be merged 
 

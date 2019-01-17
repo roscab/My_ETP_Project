@@ -558,6 +558,15 @@ input[type=text], select, textarea {
   resize: vertical;
 }
 
+input[type=password], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+
 /* .text_field{
   margin-top: 10px;
   margin-left:40px;
@@ -636,4 +645,18 @@ input[type=submit]:hover {
   padding: 10px 0px 10px 0px;
 }
 
+.login{
+  border: 1px solid gray; 
+  border-radius: 8px; 
+  padding: 20px; 
+  margin-top: 100px; 
+  padding-bottom: 100px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+.logged_account{
+  position: absolute;
+  right: 36px;
+  top: 24px;
+}
 

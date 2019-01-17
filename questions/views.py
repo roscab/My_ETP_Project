@@ -1,5 +1,9 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.http import HttpResponse
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login, logout
+from django.contrib.auth.decorators import login_required
 
 from .models import Question
 from .models import Candidate
@@ -13,6 +17,7 @@ from .forms import NewBulReport
 def home(request):
     return render(request, 'home.html')
 
+@login_required(login_url="/login")
 def candidates(request):
     if request.method == 'POST':
         form = NewCandidate(request.POST)
@@ -23,10 +28,12 @@ def candidates(request):
     candidates = Candidate.objects.all()
     return render(request, 'candidates.html', {'candidates': candidates,'form': form})
 
+@login_required(login_url="/login")
 def questions(request):
     questions = Question.objects.all()
     return render(request, 'questions.html', {'questions': questions})
 
+@login_required(login_url="/login")
 def report(request):
 
     if request.method == 'POST':
@@ -52,6 +59,7 @@ def report(request):
     candidates = Candidate.objects.all()
     return render(request, 'report.html', {'candidates': candidates,'form_tech': form_tech,'form_bul': form_bul })
 
+@login_required(login_url="/login")
 def data(request):
     data = {
         "total_no_candidates": Candidate.objects.count(),
@@ -95,3 +103,25 @@ def data(request):
         "rejectedOffer_percentage": round(Candidate.objects.filter(status='Rejected offer').count()/Candidate.objects.count()*100, 1)
     }
     return render(request, 'data.html', {'data': data})
+
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            # log in the user
+            user = form.get_user()
+            login(request,user)
+            if 'next' in request.POST:
+                return redirect(request.POST.get('next'))
+            else:    
+                return redirect('home')
+    else:
+        form = AuthenticationForm()
+        # form.fields['username'].widget.attrs['placeholder'] = "username"
+        # form.fields['password'].widget.attrs['placeholder'] = "password"
+    return render(request, "login.html",{'form':form})    
+
+def logout_view(request):
+    if request.method == 'POST':
+        logout(request)
+        return redirect('home')

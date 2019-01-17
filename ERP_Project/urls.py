@@ -1,21 +1,3 @@
-
-# from django.contrib import admin
-# from django.urls import path, include
-
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-#     path('questions/', include('questions.urls')),
-# ]
-
-# from django.conf.urls import url, include
-# from django.contrib import admin
-
-# urlpatterns = [
-#     url(r'^admin/', admin.site.urls),
-#     url(r'^questions/', include('questions.urls')),
-# ]
-
-
 from django.conf.urls import url
 from django.contrib import admin
 
@@ -28,4 +10,6 @@ urlpatterns = [
     url(r'^data/', views.data, name='data_analysis'), # data page
     url(r'^questions/', views.questions, name='questions'), # questions page
     url(r'^report/', views.report, name='report'), # report page
+    url(r'^login/$', views.login_view, name='login'), # login page
+    url(r'^logout/$', views.logout_view, name='logout') # logout page
 ]

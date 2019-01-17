@@ -18,7 +18,6 @@
     <script src="{% static 'popper.min.js' %}"></script>
     <script src="{% static 'script-chart.js' %}"></script>
     <script src="{% static 'script.js' %}"></script>
-
     <title>ERNI Recruiting Plarform</title>
     </head>
 
@@ -56,6 +55,18 @@
                     {% block content %}
                     {% endblock %}   
             </div>     
-        </div>            
+        </div>        
+        <div class="logged_account">
+                <form action="{% url 'logout' %}" method="POST">
+                        {% csrf_token %}
+                        <img class="profile_icon" src="{% static 'images/profile.bmp' %}" style="margin: auto; height: 60px">
+                        <p style="text-align: center; margin: 0px"> {{ user.get_short_name }}</p>
+                        {% if user.is_authenticated  %}
+                            <button class="btn btn-danger btn-sm" type="submit" style="width: 100%">log out</button> 
+                        {% else %}    
+                            <a class="btn btn-success btn-sm" href="/login" style="width: 100%">log in</a>
+                        {% endif %}
+                </form>   
+        </div>    
     </body>   
 </html>        
