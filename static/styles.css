@@ -298,6 +298,14 @@ select{
   visibility: hidden; 
 }
 
+.btn_update_status
+{
+  cursor: pointer;
+  width: 20px; 
+  float: right;
+  margin-top: 3px;
+}
+
 .popup {
   position: relative;
   display: inline-block;
@@ -395,6 +403,15 @@ select{
   border: none;
   box-shadow: 3px 3px #d4d4d4;
   margin-top: 30px;
+}
+
+#btn_cancel_status_update{
+  background-color:rgb(175, 68, 68);
+  width: 90px;  
+  height: 48px;
+  margin-left: 48px;
+  border: none;
+  box-shadow: 3px 3px #d4d4d4;
 }
 
 #btn_submit_entry{
@@ -660,3 +677,16 @@ input[type=submit]:hover {
   top: 24px;
 }
 
+.container_update_status{
+  display: block;
+  visibility: hidden;
+  position: absolute;
+  width: 25%;
+  height: 22%;
+  left: 37.5%;
+  top: 37.5%;
+  background: white;
+  z-index: 0;
+  box-shadow: 3px 3px 3px 3px #d4d4d4;
+  border-radius: 20px; 
+}

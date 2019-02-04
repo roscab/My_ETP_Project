@@ -167,13 +167,25 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
+    $(".btn_update_status").click(function(){  
+        $("#update_stauts_window").css("visibility", "visible");  
+    });
+});
+
+$(document).ready(function(){
     $("#btn_cancel_entry").click(function(){  
         $("#new_candidate_window").css("visibility", "hidden");
         $("#btn_add_candidate").show()
     });
 });
 
-// check if the tow can be merged 
+$(document).ready(function(){
+    $("#btn_cancel_status_update").click(function(){  
+        $("#update_stauts_window").css("visibility", "hidden");
+    });
+});
+
+// check if the two can be merged 
 
 $(document).ready(function(){
     $("#btn_cancel_technical_feedback").click(function(){  
@@ -192,6 +204,11 @@ function addBulReport() {
     $("#container_new_bul_report").css("visibility", "visible");
     var entry_id = event.target.id
     $('#entry_id_field_bul').attr('value',entry_id);
+}
+
+function changeStatus() {
+    var entry_id = event.target.id
+    $('#entry_id_change_status').attr('value',entry_id);
 }
 
 $(document).ready(function(){

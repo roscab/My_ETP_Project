@@ -15,8 +15,13 @@ class NewCandidate(forms.ModelForm):
         self.fields['phone'].widget.attrs['placeholder'] = '+34123456789'
         self.fields['skype'].widget.attrs['placeholder'] = 'johnDoe2018'
         self.fields['contact_date'].widget.attrs['placeholder'] = '2018-10-30'
-
     
+class NewStatus(forms.ModelForm):
+
+    class Meta:
+        model = Candidate  
+        fields = ("status",)
+
 class NewTechReport(forms.ModelForm):
 
     class Meta:

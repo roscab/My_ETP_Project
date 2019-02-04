@@ -21,12 +21,12 @@
             <tr >
                 <th style="background-color: #83c1f3" width="16%">Candidate</th>
                 <th style="background-color: #83c1f3" width="6%" >Group</th>
-                <th style="background-color: #83c1f3" width="6%" >Recruiter</th>
+                <th style="background-color: #83c1f3" width="5%" >Recruiter</th>
                 <th style="background-color: #83c1f3" width="8%" >Contact date</th>
-                <th style="background-color: #83c1f3" width="14%" >Tech interviewer</th>
-                <th style="background-color: #83c1f3" width="9%" >Technical Level</th>
-                <th style="background-color: #83c1f3" width="12%" >BUL interviewer</th>
-                <th style="background-color: #83c1f3" width="14%" >Status</th>
+                <th style="background-color: #83c1f3" width="13%" >Tech interviewer</th>
+                <th style="background-color: #83c1f3" width="8%" >Technical Level</th>
+                <th style="background-color: #83c1f3" width="13%" >BUL interviewer</th>
+                <th style="background-color: #83c1f3" width="16%" >Status</th>
             </tr>
                     
             {% for candidate in candidates reversed %}  
@@ -46,7 +46,9 @@
                             <img type="button" class="bul_feedback_icon" data-toggle="popover" data-placement="bottom" src="{% static 'images/tech_feedback.ico' %}" data-content="{{ candidate.bul_feedback }}" title="BUL interview feedback">
                             <img type="button" class="bul_feedback_date_icon" data-toggle="popover" data-placement="bottom" src="{% static 'images/calendar-icon.png' %}" data-content="{{ candidate.bul_interview_date }}" title="BUL interview date">
                     </td>
-                    <td class="status" style="font-weight: bold">{{ candidate.status }}</td>
+                    <td class="status" style="font-weight: bold">{{ candidate.status }} 
+                        <img type="button" class="btn_update_status" id="{{ candidate.id }}" onclick="changeStatus()" src="{% static 'images/change-icon.png' %}" >
+                    </td>        
                 </tr>    
             {% endfor %}   
         </table>
@@ -97,8 +99,25 @@
         </div>     -->
         <div class="row">
             <div class="col-25"><button class="btn btn-primary btn" id="btn_cancel_entry">Cancel</button> </div>
-            <div class="col-75"><input type="submit" id="btn_submit_entry"></div>    
+            <div class="col-75"><input type="submit" id="btn_submit_entry" name="submit_new_candidate"></div>    
         </div>
     </form>
 </div>  
+
+<div class="container_update_status" id="update_stauts_window">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-100"><label class="new_entry" for="lname">Select new status below:</label>
+            </div>
+            <div class="row" style="margin-left: 50px">
+                <div class="col-100">{{ status_form.status  }}</div>
+            </div>
+            <div class="row">
+                <div class="col-25"><button class="btn btn-primary btn" id="btn_cancel_status_update">Cancel</button> </div>
+                <div class="col-75"><input type="submit" id="btn_submit_entry" name="submit_new_status" style="margin-left: 140px; margin-top: 0px"></div>    
+            </div>
+            <input type='text' id='entry_id_change_status' name='entry_id' value=1 style="visibility: hidden">
+        </form>
+    </div>  
 {% endblock %}

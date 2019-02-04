@@ -9,6 +9,7 @@ from .models import Question
 from .models import Candidate
 
 from .forms import NewCandidate
+from .forms import NewStatus
 from .forms import NewTechReport
 from .forms import NewBulReport
 
@@ -20,13 +21,33 @@ def home(request):
 @login_required(login_url="/login")
 def candidates(request):
     if request.method == 'POST':
-        form = NewCandidate(request.POST)
-        if form.is_valid():
-            form.save()
+        if 'submit_new_candidate' in request.POST:
+            form = NewCandidate(request.POST)
+            if form.is_valid():
+                form.save()
+        else:
+            entry_id = request.POST['entry_id']  # returns the entry id from database  
+            instance = Candidate.objects.get(id=entry_id)
+            status_form = NewStatus(request.POST or None, instance=instance)
+            if status_form.is_valid():
+                status_form.save()
 
     form = NewCandidate()
+    status_form = NewStatus()
     candidates = Candidate.objects.all()
-    return render(request, 'candidates.html', {'candidates': candidates,'form': form})
+    
+    return render(request, 'candidates.html', {'candidates': candidates,'form': form, 'status_form': status_form})
+
+@login_required(login_url="/login")
+def update_status(request):
+    if request.method == 'POST':
+        status_form = NewStatus(request.POST)
+        if status_form.is_valid():
+            status_form.save()
+
+    status_form = NewStatus()
+    candidates = Candidate.objects.all()
+    return render(request, 'candidates.html', {'candidates': candidates,'status_form': status_form})    
 
 @login_required(login_url="/login")
 def questions(request):
