@@ -179,12 +179,6 @@ $(document).ready(function(){
     });
 });
 
-$(document).ready(function(){
-    $("#btn_cancel_status_update").click(function(){  
-        $("#update_stauts_window").css("visibility", "hidden");
-    });
-});
-
 // check if the two can be merged 
 
 $(document).ready(function(){

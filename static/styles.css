@@ -402,7 +402,6 @@ select{
   margin-left: 48px;
   border: none;
   box-shadow: 3px 3px #d4d4d4;
-  margin-top: 30px;
 }
 
 #btn_cancel_status_update{
@@ -417,7 +416,13 @@ select{
 #btn_submit_entry{
   float: right;
   box-shadow: 3px 3px #d4d4d4;
-  margin-top: 30px;
+}
+
+#btn_submit_status_change{
+  float: right;
+  box-shadow: 3px 3px #d4d4d4;
+  margin-right: 34px; 
+  margin-top: 0px;
 }
 
 #btn_cancel_technical_feedback{
@@ -528,9 +533,9 @@ label.question{
   visibility: hidden;
   position: absolute;
   width: 50%;
-  height: 75%;
+  height: 87%;
   left: 25%;
-  top: 10%;
+  top: 5%;
   background: white;
   z-index: 0;
   box-shadow: 3px 3px 3px 3px #d4d4d4;

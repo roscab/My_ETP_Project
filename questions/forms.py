@@ -6,7 +6,7 @@ class NewCandidate(forms.ModelForm):
 
     class Meta:
         model = Candidate  
-        fields = ('name','email','phone','skype','contact_date','contact_mode','recruiter','group')
+        fields = ('name','email','phone','skype','contact_date','contact_mode','recruiter','group','technical_interviewer','bul_interviewer')
     
     def __init__(self, *args, **kwargs):
         super(NewCandidate, self).__init__(*args, **kwargs)

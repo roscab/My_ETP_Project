@@ -25,7 +25,8 @@ def candidates(request):
             form = NewCandidate(request.POST)
             if form.is_valid():
                 form.save()
-        else:
+
+        elif 'submit_new_status' in request.POST:
             entry_id = request.POST['entry_id']  # returns the entry id from database  
             instance = Candidate.objects.get(id=entry_id)
             status_form = NewStatus(request.POST or None, instance=instance)
@@ -66,7 +67,8 @@ def report(request):
             if form_tech.is_valid():
                 instance.status = 'Pass technical interview'
                 form_tech.save() 
-        else:
+                
+        elif 'submit_bul_feedback' in request.POST: 
             form_bul = NewBulReport(request.POST or None, instance=instance)
             if form_bul.is_valid():
                 if form_bul.instance.bul_verdic == 'Accepted':

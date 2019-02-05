@@ -39,7 +39,7 @@ class Candidate(models.Model):
                                    ('Hernan Bartoletti','Hernan Bartoletti'),('Javier Cabo','Javier Cabo'),('Paul Melero','Paul Melero'),('Ruben Manzano','Ruben Manzano'),
                                    ('Victor Carrascal','Victor Carrascal'),('Vinicius Scheidegger','Vinicius Scheidegger')] 
     BUL_VALIDATOR_OPTIONS = [('Alfons Martinez','Alfons Martinez'),('Albert Alsina','Albert Alsina'),('Arnau Roca','Arnau Roca'),('Ana Diez','Ana Diez'),
-                            ('Christian Fuentes','Christian Fuentes'),('Daniel DeAmorim','Daniel DeAmorim'),('Juan Bernardo','Juan Bernardo'),('Lara Hernandez','Lara Hernandez'),
+                            ('Christian Fuentes','Christian Fuentes'),('Daniel DeAmorim','Daniel DeAmorim'),('Eudes Costa','Eudes Costa'),('Juan Bernardo','Juan Bernardo'),('Lara Hernandez','Lara Hernandez'),
                             ('Marc Baguena','Marc Baguena'),('Ramon Arque','Ramon Arque'),('Samuel Chicon','Samuel Chicon'),('Victor Carrascal','Victor Carrascal')] 
     BUL_VERDIC = [('Accepted','Accepted'),('Rejected','Rejected')]
 

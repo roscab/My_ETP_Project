@@ -20,6 +20,7 @@
             
         {% for candidate in candidates %}  
             {% if candidate.status == 'Pass recruiter interview' or candidate.status == 'Pass technical interview' %}
+            {% if user.get_short_name in candidate.technical_interviewer or user.get_short_name in candidate.bul_interviewer%}
             <tr class="candidate_entry" id="{{ candidate.id }}" tag="{{ candidate.group }}">
                 <td><b>{{ candidate.name }}</b>
                     <img type="button" class="contact_icon" data-toggle="popover" data-placement="bottom" src="{% static 'images/contact-icon.png' %}" data-content="Phone: {{ candidate.phone }} <br /> E-mail: {{ candidate.email }} <br /> Skype: {{ candidate.skype }}"  data-html="true" title="Contact information">
@@ -37,7 +38,8 @@
                 <td><button class="btn btn-primary btn" id="{{ candidate.id }}" onclick="addBulReport()">Write BUL report</button></td> 
                 {% endif %} 
             </tr>    
-            {% endif %} 
+            {% endif %}
+            {% endif %}  
         {% endfor %}   
     </table>
 </div>  
@@ -102,7 +104,7 @@
         </div>    
         <div class="row">
             <div class="col-lg-6"><button class="btn btn-primary btn" id="btn_cancel_bul_feedback">Cancel</button></div> 
-            <div class="col-lg-6"><input type="Submit" value="Submit" id="btn_submit_bul_feedback"></div>  
+            <div class="col-lg-6"><input type="Submit" value="Submit" id="btn_submit_bul_feedback" name="submit_bul_feedback"></div>  
         </div>
         <input type='text' id='entry_id_field_bul' name='entry_id' value=1 style="visibility: hidden">
     </form> 
